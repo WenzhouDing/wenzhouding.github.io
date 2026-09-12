@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#eeeae2" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23f0e4cf'/%3E%3Cpath d='M12 6h8v6h6v8h-6v6h-8v-6H6v-8h6z' fill='%23c38b42'/%3E%3C/svg%3E" />
+    <meta name="description" content="Step inside an ambulance. Explore the reconstructed cabin, open its cabinets, and try the equipment in an interactive 3D experience." />
+    <title>AGI Ambulance — Explore the interior</title>
+    <script type="module" crossorigin src="./assets/index-BFOY-iXY.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BzdYS2HH.css">
+  </head>
+  <body>
+    <div id="app">
+      <div id="viewport" aria-label="Interactive 3D ambulance interior" tabindex="0"></div>
+
+      <header class="topbar glass">
+        <a class="brand" href="./" aria-label="AGI Ambulance home">
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6z" /></svg></span>
+          <span class="brand-copy"><strong>AGI Ambulance</strong><span>Interactive interior</span></span>
+        </a>
+        <div class="mode-switch" aria-label="Navigation mode">
+          <button id="mode-walk" class="mode-button active" type="button" aria-pressed="true">Explore</button>
+          <button id="mode-inspect" class="mode-button" type="button" aria-pressed="false">Inspect</button>
+        </div>
+        <div class="topbar-actions">
+          <button id="equipment-toggle" class="quiet-button equipment-button" type="button" aria-label="Browse equipment" aria-controls="equipment-panel" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span>Equipment</span></button>
+          <span class="toolbar-divider" aria-hidden="true"></span>
+          <button id="reset-button" class="icon-button" type="button" aria-label="Reset the room" title="Reset the room"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 10a8.5 8.5 0 1 1 .9 6M3.5 4v6h6"/></svg></button>
+          <button id="help-button" class="icon-button" type="button" aria-label="Help and controls" title="Help and controls"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.3 9a2.8 2.8 0 0 1 5.4 1c0 2-2.7 2-2.7 4M12 17h.01"/></svg></button>
+        </div>
+      </header>
+
+      <nav id="view-buttons" class="view-strip glass" aria-label="Jump to a cabin view">
+        <span class="view-label">Views</span>
+        <button type="button" data-view="rear" class="view-button active" aria-pressed="true">Rear</button>
+        <button type="button" data-view="front" class="view-button" aria-pressed="false">Front</button>
+        <button type="button" data-view="equipment" class="view-button" aria-pressed="false">Equipment</button>
+        <button type="button" data-view="bench" class="view-button" aria-pressed="false">Bench</button>
+      </nav>
+
+      <aside id="equipment-panel" class="equipment-panel glass" aria-labelledby="equipment-heading" hidden>
+        <div class="panel-heading"><div><span class="eyebrow">Inside the cabin</span><h1 id="equipment-heading">Equipment</h1></div><button id="equipment-close" class="icon-button" type="button" aria-label="Close equipment list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
+        <label class="search-field"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><span class="sr-only">Search equipment</span><input id="search" type="search" placeholder="Find an object…" autocomplete="off" spellcheck="false" /></label>
+        <div id="category-filters" class="category-filters" aria-label="Filter equipment">
+          <button type="button" data-category="all" class="category-button active" aria-pressed="true">All</button>
+          <button type="button" data-category="equipment" class="category-button" aria-pressed="false">Equipment</button>
+          <button type="button" data-category="storage" class="category-button" aria-pressed="false">Storage</button>
+          <button type="button" data-category="safety" class="category-button" aria-pressed="false">Safety</button>
+        </div>
+        <div id="objects-list" class="objects-list" aria-label="Interactive objects"><p class="empty-list">Loading the cabin’s equipment…</p></div>
+        <div class="panel-footer"><span class="status-dot" aria-hidden="true"></span>Choose an object to take a closer look.</div>
+      </aside>
+
+      <div id="crosshair" class="crosshair" aria-hidden="true"><span></span><span></span></div>
+      <div id="status" class="status-toast glass" role="status" aria-live="polite" aria-atomic="true"></div>
+
+      <section id="interaction-card" class="interaction-card glass" aria-labelledby="target-name">
+        <div class="interaction-copy"><span class="eyebrow">Explore & interact</span><h2 id="target-name">Step inside</h2><p id="target-description">Click an object to see what you can do.</p></div>
+        <div class="interaction-actions">
+          <button id="primary-action" class="action-button primary" type="button" disabled><span>Interact</span><kbd>E</kbd></button>
+          <button id="grab-action" class="action-button secondary" type="button" disabled><span>Grab</span><kbd>G</kbd></button>
+          <button id="return-action" class="action-button secondary" type="button" disabled><span>Put back</span></button>
+        </div>
+      </section>
+
+      <div class="navigation-hint glass"><span class="hint-mouse" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="7"/><path d="M12 3v6"/></svg></span><span>Drag to look <span class="hint-divider">·</span> <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> to move</span><button id="look-button" type="button" class="text-button" title="Lock the pointer to look around">Free look <span aria-hidden="true">↗</span></button></div>
+
+      <div class="scene-info"><label for="quality-select" class="sr-only">Graphics quality</label><select id="quality-select" aria-label="Graphics quality"><option value="balanced">Balanced</option><option value="high">High quality</option></select><span class="scene-info-divider" aria-hidden="true"></span><span><span id="fps">—</span> fps</span><span class="object-count"><span id="object-count">—</span> objects</span></div>
+
+      <div id="mobile-controls" class="mobile-controls" aria-label="Move around the cabin">
+        <button type="button" data-move="forward" aria-label="Move forward"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 15 6-6 6 6"/></svg></button>
+        <button type="button" data-move="left" aria-label="Move left"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg></button>
+        <button type="button" data-move="back" aria-label="Move backward"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <button type="button" data-move="right" aria-label="Move right"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></button>
+      </div>
+
+      <div id="start-overlay" class="start-overlay" hidden>
+        <section class="welcome-card glass" aria-labelledby="welcome-title">
+          <span class="eyebrow">A room built to explore</span>
+          <h1 id="welcome-title">An ambulance.<br />In your hands.</h1>
+          <p>Step inside, open a cabinet, pick up the phone. Get to know the equipment around you.</p>
+          <button id="start-button" type="button" class="start-button">Enter the ambulance <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></button>
+          <span class="welcome-note">Drag to look around. Click an object to interact.</span>
+        </section>
+      </div>
+
+      <div id="loading" class="loading-overlay" role="status" aria-live="polite">
+        <div class="loading-content"><span class="brand-mark loading-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6z" /></svg></span><span class="eyebrow">AGI Ambulance</span><h1>Preparing the cabin</h1><p id="load-message">Loading the interior and its equipment…</p><progress id="load-progress" max="100" value="0" aria-label="Loading progress"></progress><span class="loading-note">A lightweight interactive reconstruction with simplified physics.</span></div>
+      </div>
+
+      <dialog id="help-dialog" class="help-dialog" aria-labelledby="help-heading">
+        <div class="panel-heading"><div><span class="eyebrow">Make yourself at home</span><h2 id="help-heading">Explore the ambulance</h2></div><button id="help-close" class="icon-button" type="button" aria-label="Close help"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
+        <p class="help-intro">Try a buckle, open the storage, or lift a piece of equipment. Select an object to see its available actions.</p>
+        <dl class="controls-list"><div><dt>Look around</dt><dd>Drag an empty part of the scene</dd></div><div><dt>Move</dt><dd><kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd><span class="mobile-help"> or the arrow controls</span></dd></div><div><dt>Select</dt><dd>Click an object or use Equipment</dd></div><div><dt>Interact / grab</dt><dd><kbd>E</kbd> / <kbd>G</kbd> or the action buttons</dd></div><div><dt>Move a held object</dt><dd>Look around; scroll to change its distance</dd></div><div><dt>Leave free look</dt><dd><kbd>Esc</kbd></dd></div><div><dt>Start fresh</dt><dd>Reset restores the room</dd></div></dl>
+        <p class="help-footer">This browser demo uses simplified physics for responsive interaction.</p>
+      </dialog>
+    </div>
+  </body>
+</html>
