@@ -1,100 +1,120 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta name="theme-color" content="#eeeae2" />
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23f0e4cf'/%3E%3Cpath d='M12 6h8v6h6v8h-6v6h-8v-6H6v-8h6z' fill='%23c38b42'/%3E%3C/svg%3E" />
-    <meta name="description" content="Step inside an ambulance. Explore the reconstructed cabin, open its cabinets, and try the equipment in an interactive 3D experience." />
-    <title>AGI Ambulance — Explore the interior</title>
-    <script type="module" crossorigin src="./assets/index-CFekR-PI.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BzdYS2HH.css">
-  </head>
-  <body>
-    <div id="app">
-      <div id="viewport" aria-label="Interactive 3D ambulance interior" tabindex="0"></div>
-
-      <header class="topbar glass">
-        <a class="brand" href="./" aria-label="AGI Ambulance home">
-          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6z" /></svg></span>
-          <span class="brand-copy"><strong>AGI Ambulance</strong><span>Interactive interior</span></span>
-        </a>
-        <div class="mode-switch" aria-label="Navigation mode">
-          <button id="mode-walk" class="mode-button active" type="button" aria-pressed="true">Explore</button>
-          <button id="mode-inspect" class="mode-button" type="button" aria-pressed="false">Inspect</button>
-        </div>
-        <div class="topbar-actions">
-          <button id="equipment-toggle" class="quiet-button equipment-button" type="button" aria-label="Browse equipment" aria-controls="equipment-panel" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span>Equipment</span></button>
-          <span class="toolbar-divider" aria-hidden="true"></span>
-          <button id="reset-button" class="icon-button" type="button" aria-label="Reset the room" title="Reset the room"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 10a8.5 8.5 0 1 1 .9 6M3.5 4v6h6"/></svg></button>
-          <button id="help-button" class="icon-button" type="button" aria-label="Help and controls" title="Help and controls"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.3 9a2.8 2.8 0 0 1 5.4 1c0 2-2.7 2-2.7 4M12 17h.01"/></svg></button>
-        </div>
-      </header>
-
-      <nav id="view-buttons" class="view-strip glass" aria-label="Jump to a cabin view">
-        <span class="view-label">Views</span>
-        <button type="button" data-view="rear" class="view-button active" aria-pressed="true">Rear</button>
-        <button type="button" data-view="front" class="view-button" aria-pressed="false">Front</button>
-        <button type="button" data-view="equipment" class="view-button" aria-pressed="false">Equipment</button>
-        <button type="button" data-view="bench" class="view-button" aria-pressed="false">Bench</button>
-      </nav>
-
-      <aside id="equipment-panel" class="equipment-panel glass" aria-labelledby="equipment-heading" hidden>
-        <div class="panel-heading"><div><span class="eyebrow">Inside the cabin</span><h1 id="equipment-heading">Equipment</h1></div><button id="equipment-close" class="icon-button" type="button" aria-label="Close equipment list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
-        <label class="search-field"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><span class="sr-only">Search equipment</span><input id="search" type="search" placeholder="Find an object…" autocomplete="off" spellcheck="false" /></label>
-        <div id="category-filters" class="category-filters" aria-label="Filter equipment">
-          <button type="button" data-category="all" class="category-button active" aria-pressed="true">All</button>
-          <button type="button" data-category="equipment" class="category-button" aria-pressed="false">Equipment</button>
-          <button type="button" data-category="storage" class="category-button" aria-pressed="false">Storage</button>
-          <button type="button" data-category="safety" class="category-button" aria-pressed="false">Safety</button>
-        </div>
-        <div id="objects-list" class="objects-list" aria-label="Interactive objects"><p class="empty-list">Loading the cabin’s equipment…</p></div>
-        <div class="panel-footer"><span class="status-dot" aria-hidden="true"></span>Choose an object to take a closer look.</div>
-      </aside>
-
-      <div id="crosshair" class="crosshair" aria-hidden="true"><span></span><span></span></div>
-      <div id="status" class="status-toast glass" role="status" aria-live="polite" aria-atomic="true"></div>
-
-      <section id="interaction-card" class="interaction-card glass" aria-labelledby="target-name">
-        <div class="interaction-copy"><span class="eyebrow">Explore & interact</span><h2 id="target-name">Step inside</h2><p id="target-description">Click an object to see what you can do.</p></div>
-        <div class="interaction-actions">
-          <button id="primary-action" class="action-button primary" type="button" disabled><span>Interact</span><kbd>E</kbd></button>
-          <button id="grab-action" class="action-button secondary" type="button" disabled><span>Grab</span><kbd>G</kbd></button>
-          <button id="return-action" class="action-button secondary" type="button" disabled><span>Put back</span></button>
-        </div>
-      </section>
-
-      <div class="navigation-hint glass"><span class="hint-mouse" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="7"/><path d="M12 3v6"/></svg></span><span>Drag to look <span class="hint-divider">·</span> <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> to move</span><button id="look-button" type="button" class="text-button" title="Lock the pointer to look around">Free look <span aria-hidden="true">↗</span></button></div>
-
-      <div class="scene-info"><label for="quality-select" class="sr-only">Graphics quality</label><select id="quality-select" aria-label="Graphics quality"><option value="balanced">Balanced</option><option value="high">High quality</option></select><span class="scene-info-divider" aria-hidden="true"></span><span><span id="fps">—</span> fps</span><span class="object-count"><span id="object-count">—</span> objects</span></div>
-
-      <div id="mobile-controls" class="mobile-controls" aria-label="Move around the cabin">
-        <button type="button" data-move="forward" aria-label="Move forward"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 15 6-6 6 6"/></svg></button>
-        <button type="button" data-move="left" aria-label="Move left"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg></button>
-        <button type="button" data-move="back" aria-label="Move backward"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
-        <button type="button" data-move="right" aria-label="Move right"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></button>
-      </div>
-
-      <div id="start-overlay" class="start-overlay" hidden>
-        <section class="welcome-card glass" aria-labelledby="welcome-title">
-          <span class="eyebrow">A room built to explore</span>
-          <h1 id="welcome-title">An ambulance.<br />In your hands.</h1>
-          <p>Step inside, open a cabinet, pick up the phone. Get to know the equipment around you.</p>
-          <button id="start-button" type="button" class="start-button">Enter the ambulance <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></button>
-          <span class="welcome-note">Drag to look around. Click an object to interact.</span>
-        </section>
-      </div>
-
-      <div id="loading" class="loading-overlay" role="status" aria-live="polite">
-        <div class="loading-content"><span class="brand-mark loading-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6z" /></svg></span><span class="eyebrow">AGI Ambulance</span><h1>Preparing the cabin</h1><p id="load-message">Loading the interior and its equipment…</p><progress id="load-progress" max="100" value="0" aria-label="Loading progress"></progress><span class="loading-note">A lightweight interactive reconstruction with simplified physics.</span></div>
-      </div>
-
-      <dialog id="help-dialog" class="help-dialog" aria-labelledby="help-heading">
-        <div class="panel-heading"><div><span class="eyebrow">Make yourself at home</span><h2 id="help-heading">Explore the ambulance</h2></div><button id="help-close" class="icon-button" type="button" aria-label="Close help"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
-        <p class="help-intro">Try a buckle, open the storage, or lift a piece of equipment. Select an object to see its available actions.</p>
-        <dl class="controls-list"><div><dt>Look around</dt><dd>Drag an empty part of the scene</dd></div><div><dt>Move</dt><dd><kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd><span class="mobile-help"> or the arrow controls</span></dd></div><div><dt>Select</dt><dd>Click an object or use Equipment</dd></div><div><dt>Interact / grab</dt><dd><kbd>E</kbd> / <kbd>G</kbd> or the action buttons</dd></div><div><dt>Move a held object</dt><dd>Look around; scroll to change its distance</dd></div><div><dt>Leave free look</dt><dd><kbd>Esc</kbd></dd></div><div><dt>Start fresh</dt><dd>Reset restores the room</dd></div></dl>
-        <p class="help-footer">This browser demo uses simplified physics for responsive interaction.</p>
-      </dialog>
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Explore the AGI-Ambulance reconstruction: an interactive browser demo, six rendered interaction films, and editable Blender scenes.">
+<meta name="theme-color" content="#f4f2eb">
+<title>AGI-Ambulance — Explore the interior</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='12' fill='%23b64230'/%3E%3Cpath d='M20 10h8v10h10v8H28v10h-8V28H10v-8h10z' fill='%23fff9ed'/%3E%3C/svg%3E">
+<style>
+:root{--paper:#f4f2eb;--ink:#202922;--muted:#647068;--line:#d6dacf;--accent:#b64230;--forest:#253b33;--light:#fcfbf7;--radius:4px;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--paper);font-synthesis:none}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:26px}body{margin:0}a{color:inherit;text-decoration-thickness:1px;text-underline-offset:4px}button,select{font:inherit}button,a{-webkit-tap-highlight-color:transparent}button{cursor:pointer}button:disabled{cursor:default}:focus-visible{outline:3px solid var(--accent);outline-offset:5px}::selection{background:#c5d6cc;color:#17241c}.wrap{max-width:1392px;padding:0 48px;margin:auto}.skip{position:absolute;top:-80px;left:16px;z-index:100;padding:12px 20px;background:var(--ink);color:white}.skip:focus{top:10px}header{height:96px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{display:inline-flex;align-items:center;gap:13px;text-decoration:none;font-size:16px;letter-spacing:-.3px;font-weight:700}.brand-mark{height:31px;width:31px;background:var(--accent);border-radius:3px;color:var(--light);display:grid;place-items:center;font-size:29px;font-weight:400;line-height:1}.brand small{font-size:10px;letter-spacing:1.8px;font-weight:400;display:block;margin-top:4px;color:var(--muted)}nav{display:flex;gap:28px;font-size:12px;align-items:center}nav a{text-decoration:none}nav a:hover{text-decoration:underline}nav .nav-index{font-size:10px;color:var(--muted);margin-right:5px}.hero-copy{padding:71px 0 40px;display:grid;grid-template-columns:1.15fr 1fr;gap:72px;align-items:end}.eyebrow{font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:700;margin:0 0 20px;display:flex;align-items:center;gap:9px}.eyebrow:before{content:"";display:block;width:23px;height:1px;background:currentColor}h1,h2,h3,p{margin-top:0}h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(48px,5.65vw,78px);font-weight:400;letter-spacing:-3.1px;line-height:1.03;margin-bottom:0}h1 em{font-weight:400;color:var(--accent)}.hero-intro{max-width:435px;margin-left:auto;padding-bottom:3px}.hero-intro p{font-size:17px;line-height:1.6;max-width:410px;margin-bottom:25px;color:#536057}.action-row{display:flex;align-items:center;gap:24px;flex-wrap:wrap}.primary{background:var(--forest);color:#fffdf5;padding:16px 21px;text-decoration:none;display:inline-flex;align-items:center;gap:34px;font-size:13px;border:1px solid var(--forest);border-radius:var(--radius)}.primary:hover{background:#344f42}.quiet-link{font-size:12px}.hero-frame{margin:0;position:relative;border-radius:var(--radius);overflow:hidden;background:#d7d9d2}.hero-frame img{display:block;width:100%;height:auto;aspect-ratio:2.16;object-fit:cover;object-position:center 52%}.hero-label{position:absolute;left:22px;bottom:20px;display:flex;gap:12px;align-items:center;color:#fffdf6;background:#17251fdf;padding:10px 13px;border-radius:2px;font-size:10px;letter-spacing:.4px}.hero-label b{color:#d6bd91;font-size:9px;letter-spacing:1px}.release-strip{display:flex;justify-content:space-between;gap:20px;align-items:center;border-bottom:1px solid var(--line);padding:21px 0 25px}.release-chips{display:flex;gap:27px;flex-wrap:wrap}.chip{display:flex;align-items:center;gap:7px;color:var(--muted);font-size:11px}.chip:before{content:"";width:4px;height:4px;border-radius:50%;background:#6a836e}.verified{font-size:10px;color:var(--muted);white-space:nowrap;letter-spacing:.2px}.section{padding-top:72px}.section-head{display:flex;gap:25px;justify-content:space-between;align-items:end;margin-bottom:28px}.section-number{color:var(--accent);font:11px Arial,Helvetica,sans-serif;letter-spacing:1px;display:block;margin-bottom:12px}h2{font-family:Georgia,'Times New Roman',serif;font-size:40px;font-weight:400;letter-spacing:-1.2px;line-height:1.1;margin-bottom:0}.section-head p{font-size:12px;line-height:1.6;color:var(--muted);max-width:310px;margin-bottom:1px}.film-layout{display:grid;grid-template-columns:minmax(0,1.74fr) minmax(310px,1fr);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--light)}.viewer{min-width:0;background:#1b241f;color:#fffdf4}.viewer-top{padding:16px 19px;display:flex;align-items:center;justify-content:space-between;gap:10px;border-bottom:1px solid #3c4940;font-size:11px}.overview{border:0;background:transparent;color:inherit;padding:0 0 2px;font-size:11px;text-align:left;border-bottom:1px solid transparent}.overview[aria-pressed=true]{border-bottom-color:#d7b281;color:#f0d2aa}.viewer-quality{font-size:9px;letter-spacing:1px;color:#aab5a9;white-space:nowrap}.video-stage{aspect-ratio:16/9;position:relative;background:#111915}video{display:block;width:100%;height:100%;object-fit:contain;background:#111915}.video-start{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:65px;height:65px;border-radius:50%;background:#fcfbf3eb;color:#26352b;border:1px solid #ffffff70;display:grid;place-items:center;box-shadow:0 2px 25px #0003}.video-start:hover{background:#fff}.video-start svg{width:17px;height:21px;margin-left:4px;fill:currentColor}.video-start[hidden]{display:none}.caption-line{min-height:50px;display:flex;align-items:center;justify-content:center;text-align:center;padding:12px 24px;color:#eee9dc;font-size:11px;line-height:1.45;border-top:1px solid #303c33}.viewer-footer{padding:17px 19px;display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px solid #39463c;font-size:10px;color:#b6c1b6}.viewer-footer a{color:#e1e4d8}.playback-label{display:flex;align-items:center;gap:7px}.playback-label select{border:0;background:#314035;color:#fffdf4;font-size:10px;border-radius:2px;padding:4px 5px}.film-list{display:flex;flex-direction:column}.film-choice{appearance:none;width:100%;display:flex;align-items:center;gap:15px;border:0;border-bottom:1px solid var(--line);background:var(--light);color:var(--ink);text-align:left;padding:17px 19px;flex:1;position:relative}.film-choice:last-child{border-bottom:0}.film-choice:hover{background:#eeeee6}.film-choice[aria-pressed=true]{background:#e5ece2}.film-choice[aria-pressed=true]:before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--forest)}.film-number{font:10px monospace;color:#7f8c7f;align-self:flex-start;padding-top:2px}.film-description{display:block;min-width:0}.film-description strong{display:block;font-size:12px;line-height:1.4;font-weight:600;margin-bottom:4px}.film-description>span{font-size:10px;line-height:1.5;color:var(--muted);display:block;max-width:240px}.film-duration{font:10px monospace;color:#7c857b;margin-left:auto}.film-note{margin:14px 0 0;display:flex;justify-content:space-between;gap:20px;font-size:10px;line-height:1.5;color:var(--muted)}.film-note span{max-width:750px}.blender-grid{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}.blender-card{padding:31px;background:var(--light)}.blender-card+div{border-left:1px solid var(--line);background:#ecefe7}.card-kicker{color:var(--muted);font:9px monospace;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:28px}.scene-card{display:flex;flex-direction:column;min-height:324px}.scene-card .card-bottom{margin-top:auto;padding-top:28px}.scene-card h3,.timelines-card h3{font-family:Georgia,'Times New Roman',serif;font-size:27px;font-weight:400;letter-spacing:-.5px;margin-bottom:13px}.blender-card p{font-size:12px;color:var(--muted);line-height:1.7;max-width:380px;margin-bottom:19px}.scene-link{display:inline-flex;align-items:center;gap:35px;font-size:12px;font-weight:600}.access-note{display:block;font-size:9px;color:var(--muted);margin-top:10px}.timeline-links{display:grid;grid-template-columns:1fr 1fr;gap:0 24px;margin-top:20px}.timeline-links a{font-size:11px;display:flex;align-items:center;gap:9px;padding:11px 0;border-bottom:1px solid #ccd3c7;text-decoration:none}.timeline-links a:hover{text-decoration:underline}.timeline-links a span:first-child{font:9px monospace;color:#7a877b}.timeline-links a span:last-child{margin-left:auto;color:#758274}.method{font-size:11px;line-height:1.65;color:var(--muted);padding:17px 0 0;max-width:930px}.project{margin:66px 0 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:30px 0;display:flex;gap:30px;align-items:center;justify-content:space-between}.project h3{font-family:Georgia,'Times New Roman',serif;font-size:24px;font-weight:400;letter-spacing:-.4px;margin-bottom:9px}.project p{margin-bottom:0;font-size:11px;line-height:1.6;color:var(--muted)}.project-links{display:flex;gap:25px;white-space:nowrap;font-size:11px}footer{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:28px 0 36px;font-size:9px;color:var(--muted);letter-spacing:.2px}.footer-mark{letter-spacing:1.5px;text-transform:uppercase}.error{color:#ffceb1}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(min-width:1600px){.wrap{max-width:1496px}.hero-frame img{aspect-ratio:2.3}}
+@media(max-width:1050px){.wrap{padding:0 30px}.hero-copy{gap:36px;padding-top:53px}h1{font-size:60px}.hero-intro p{font-size:15px}.film-layout{grid-template-columns:minmax(0,1.5fr) minmax(285px,1fr)}.film-choice{padding:13px 15px;gap:11px}.film-description>span{font-size:9px}.film-description strong{font-size:11px}.viewer-top,.viewer-footer{padding:14px}.hero-frame img{aspect-ratio:1.95}}
+@media(max-width:760px){.wrap{padding:0 20px}header{height:80px}.brand{font-size:14px}.brand small{font-size:8px}nav{gap:17px;font-size:11px}nav .nav-index{display:none}.hero-copy{grid-template-columns:1fr;padding-top:40px;gap:22px}.eyebrow{margin-bottom:15px;font-size:9px}h1{font-size:56px;letter-spacing:-2.2px}.hero-intro{max-width:none;margin-left:0}.hero-intro p{font-size:15px;max-width:500px;margin-bottom:21px}.primary{padding:14px 18px}.hero-frame img{aspect-ratio:1.5}.hero-label{left:13px;bottom:13px;font-size:9px;padding:8px 10px}.release-strip{flex-direction:column;align-items:flex-start;gap:14px;padding:19px 0}.release-chips{gap:17px}.chip{font-size:10px}.verified{font-size:9px}.section{padding-top:47px}.section-head{align-items:flex-start;flex-direction:column;gap:13px;margin-bottom:22px}.section-head p{max-width:430px;font-size:11px}h2{font-size:34px}.film-layout{grid-template-columns:1fr}.film-list{display:grid;grid-template-columns:1fr 1fr}.film-choice{padding:16px 13px;min-height:94px}.film-choice:nth-child(odd){border-right:1px solid var(--line)}.film-choice:nth-last-child(2){border-bottom:0}.film-duration{display:none}.film-description strong{font-size:11px}.film-description>span{font-size:9px}.film-number{font-size:9px}.film-note{flex-direction:column;gap:7px}.blender-grid{grid-template-columns:1fr}.blender-card{padding:25px}.blender-card+div{border-left:0;border-top:1px solid var(--line)}.scene-card{min-height:280px}.card-kicker{margin-bottom:23px}.blender-card p{max-width:470px}.project{margin-top:45px;flex-direction:column;align-items:flex-start;gap:22px;padding:25px 0}footer{font-size:8px;align-items:flex-start}.caption-line{min-height:50px;padding:12px 14px}.viewer-footer{font-size:9px}.viewer-quality{font-size:8px}.method{font-size:10px}}
+@media(max-width:380px){.wrap{padding:0 15px}nav{gap:12px}.brand-mark{width:27px;height:27px}.brand small{letter-spacing:1.2px}h1{font-size:48px}.release-chips{gap:10px}.chip{font-size:9px}.film-description>span{font-size:8px}.film-choice{padding:13px 10px;gap:8px}.timeline-links{gap:0 15px}.project-links{gap:20px}footer{flex-direction:column;gap:9px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header>
+  <a class="brand" href="#main" aria-label="AGI-Ambulance home"><span class="brand-mark" aria-hidden="true">+</span><span>AGI-Ambulance<small>RECONSTRUCTION / INTERACTION</small></span></a>
+  <nav aria-label="Page sections"><a href="#films"><span class="nav-index">01</span>Films</a><a href="#blender"><span class="nav-index">02</span>Blender</a><a href="#project"><span class="nav-index">03</span>Project</a></nav>
+</header>
+<main id="main">
+<section aria-labelledby="intro-title">
+  <div class="hero-copy">
+    <div><p class="eyebrow">An interactive interior reconstruction</p><h1 id="intro-title">Inside the<br><em>ambulance.</em></h1></div>
+    <div class="hero-intro"><p>Explore a reconstructed ambulance cabin. Open doors, release belts, retrieve supplies, and reconnect the equipment around you.</p><div class="action-row"><a class="primary" href="./play/">Play in your browser <span aria-hidden="true">↗</span></a><a class="quiet-link" href="#films">Watch the interactions</a></div></div>
+  </div>
+  <figure class="hero-frame"><img src="media/01_rear_doors.jpg" alt="Reconstructed ambulance cabin with a central stretcher, red medical backpack, rear doors and equipment cabinets." width="1280" height="720" fetchpriority="high"><figcaption class="hero-label"><b>FIELD OF VIEW / 01</b> Looking toward the rear doors</figcaption></figure>
+  <div class="release-strip"><div class="release-chips"><span class="chip">Interactive browser demo</span><span class="chip">6 films · 1080p</span><span class="chip">Editable Blender scenes</span></div><span class="verified">Verified release · 13 Sep 2026</span></div>
+</section>
+<section class="section" id="films" aria-labelledby="films-title">
+  <div class="section-head"><div><span class="section-number">01 / INTERACTIONS IN MOTION</span><h2 id="films-title">See how it responds.</h2></div><p>Watch the full 37-second sequence, or choose an interaction. Every film keeps the surrounding cabin in view.</p></div>
+  <div class="film-layout">
+    <div class="viewer">
+      <div class="viewer-top"><button type="button" class="overview" data-film="all" aria-pressed="true" aria-controls="release-film">Complete sequence <span aria-hidden="true">·</span> 37s</button><span class="viewer-quality">1080P / 24 FPS</span></div>
+      <div class="video-stage"><video id="release-film" controls playsinline preload="none" poster="media/01_rear_doors.jpg" aria-label="Complete interaction sequence" src="videos/Ambulance_Updated_Interactions_1080p.mp4"></video><button class="video-start" type="button" aria-label="Play complete interaction sequence"><svg viewBox="0 0 20 24" aria-hidden="true"><path d="M2 1 19 12 2 23Z"/></svg></button></div>
+      <div class="caption-line" id="film-caption" aria-live="off">Doors, belt, nets, handset and power plug — all in context.</div>
+      <div class="viewer-footer"><label class="playback-label">Speed <select id="playback-speed" aria-label="Playback speed"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option></select></label><a id="film-download" href="videos/Ambulance_Updated_Interactions_1080p.mp4" download>Save this film ↗</a><a id="caption-download" href="videos/Ambulance_Updated_Interactions_1080p.vtt" download>Captions</a></div>
     </div>
-  </body>
+    <div class="film-list" role="group" aria-label="Choose an interaction film"><button class="film-choice" type="button" data-film="01_rear_doors" aria-pressed="false" aria-controls="release-film">
+          <span class="film-number">01</span><span class="film-description"><strong>Rear doors</strong><span>Open both doors. Keep the passage clear.</span></span><span class="film-duration">6s</span>
+        </button>
+<button class="film-choice" type="button" data-film="02_belt_buckle" aria-pressed="false" aria-controls="release-film">
+          <span class="film-number">02</span><span class="film-description"><strong>Bed belt</strong><span>Release the tongue, then reconnect the belt.</span></span><span class="film-duration">6s</span>
+        </button>
+<button class="film-choice" type="button" data-film="03_ecg_net" aria-pressed="false" aria-controls="release-film">
+          <span class="film-number">03</span><span class="film-description"><strong>ECG net</strong><span>Release the lower net; keep its upper supports fixed.</span></span><span class="film-duration">7s</span>
+        </button>
+<button class="film-choice" type="button" data-film="04_cargo_net" aria-pressed="false" aria-controls="release-film">
+          <span class="film-number">04</span><span class="film-description"><strong>Cargo net</strong><span>Unfasten the corner and retrieve a supply bottle.</span></span><span class="film-duration">6s</span>
+        </button>
+<button class="film-choice" type="button" data-film="05_phone_cable" aria-pressed="false" aria-controls="release-film">
+          <span class="film-number">05</span><span class="film-description"><strong>Handset</strong><span>Lift the phone and return it to the cradle.</span></span><span class="film-duration">6s</span>
+        </button>
+<button class="film-choice" type="button" data-film="06_power_cable" aria-pressed="false" aria-controls="release-film">
+          <span class="film-number">06</span><span class="film-description"><strong>Power plug</strong><span>Unplug, hold and reconnect the cable.</span></span><span class="film-duration">6s</span>
+        </button></div>
+  </div>
+  <p class="film-note"><span>Rendered in Blender. Use the browser demo above to interact freely; these films show recorded sequences.</span><a href="#films">Choose an interaction ↑</a></p>
+  <p id="film-status" class="sr-only" role="status" aria-live="polite"></p>
+  <noscript><p>JavaScript is disabled. The full film remains available above, and the individual films are available in the dedicated player.</p></noscript>
+</section>
+<section class="section" id="blender" aria-labelledby="blender-title">
+  <div class="section-head"><div><span class="section-number">02 / THE BLENDER EDITION</span><h2 id="blender-title">Open up the scene.</h2></div><p>The current cabin and its rendered interactions, organized as one master scene and six editable timelines.</p></div>
+  <div class="blender-grid">
+    <div class="blender-card scene-card"><div class="card-kicker">01 scene / .blend</div><h3>The reconstructed interior</h3><p>Inspect the cabin, materials and equipment. The master scene contains the updated doors, connected belts and anchored nets used in this release.</p><div class="card-bottom"><a class="scene-link" href="https://github.com/WenzhouDing/AGI-Health/tree/main/blender_demo">Blender files & guide <span aria-hidden="true">↗</span></a><span class="access-note">Repository access required</span></div></div>
+    <div class="blender-card timelines-card"><div class="card-kicker">06 sequences / editable timelines</div><h3>Replay, inspect, render</h3><p>Each interaction has its own editable Blender timeline. Open the repository guide to access the scene files.</p><div class="timeline-links"><a href="https://github.com/WenzhouDing/AGI-Health/tree/main/blender_demo"><span>01</span>Rear doors<span aria-hidden="true">↗</span></a>
+<a href="https://github.com/WenzhouDing/AGI-Health/tree/main/blender_demo"><span>02</span>Bed belt<span aria-hidden="true">↗</span></a>
+<a href="https://github.com/WenzhouDing/AGI-Health/tree/main/blender_demo"><span>03</span>ECG net<span aria-hidden="true">↗</span></a>
+<a href="https://github.com/WenzhouDing/AGI-Health/tree/main/blender_demo"><span>04</span>Cargo net<span aria-hidden="true">↗</span></a>
+<a href="https://github.com/WenzhouDing/AGI-Health/tree/main/blender_demo"><span>05</span>Handset<span aria-hidden="true">↗</span></a>
+<a href="https://github.com/WenzhouDing/AGI-Health/tree/main/blender_demo"><span>06</span>Power plug<span aria-hidden="true">↗</span></a></div></div>
+  </div>
+  <p class="method">The browser uses simplified interactions for responsive play. The Blender timelines reproduce those recorded movements, including controlled belt and net deformation; they are editable recordings, not a new cloth simulation.</p>
+</section>
+<section class="project" id="project" aria-labelledby="project-title"><div><h3 id="project-title">One project. A clear place to start.</h3><p>The release guide brings the demo, Blender scenes and films together. Earlier reconstruction and testing work remains in the repository archive.</p></div><div class="project-links"><a href="https://github.com/WenzhouDing/AGI-Health/blob/main/README.md">Release guide ↗</a><a href="https://github.com/WenzhouDing/AGI-Health">AGI-Health repository ↗</a></div></section>
+</main>
+<footer><span class="footer-mark">AGI-Health / Ambulance</span><span>Public release · 6 films · 37 seconds · 888 verified frames</span></footer>
+</div>
+<script id="release-film-data" type="application/json">[{"id":"all","label":"Complete sequence","title":"Six interactions. One continuous film.","description":"Doors, belt, nets, handset and power plug — all in context.","seconds":37.0,"src":"videos/Ambulance_Updated_Interactions_1080p.mp4","poster":"media/01_rear_doors.jpg","captions":"videos/Ambulance_Updated_Interactions_1080p.vtt","cues":[{"start":0.0,"end":0.792,"text":"Rear doors · clear opening"},{"start":0.792,"end":1.208,"text":"Open left door"},{"start":1.208,"end":4.292,"text":"Open right door"},{"start":4.292,"end":4.458,"text":"Close left door"},{"start":4.458,"end":6.0,"text":"Close right door"},{"start":6.0,"end":6.958,"text":"Bed buckle · continuous belt connection and reinsertion"},{"start":6.958,"end":10.25,"text":"Press red button · release tongue and belt"},{"start":10.25,"end":12.0,"text":"Insert metal tongue · refasten belt"},{"start":12.0,"end":12.958,"text":"ECG net · fixed suspension and lower release"},{"start":12.958,"end":14.667,"text":"Press aisle buckle · lower corner drops; upper support stays"},{"start":14.667,"end":16.917,"text":"Press wall buckle · lower net folds; supports stay"},{"start":16.917,"end":17.5,"text":"Insert wall tongue"},{"start":17.5,"end":19.0,"text":"Insert aisle tongue · net secured"},{"start":19.0,"end":19.792,"text":"Cargo net · fixed wall attachment and supply retrieval"},{"start":19.792,"end":20.917,"text":"Press red button · release net; fixed ties stay"},{"start":20.917,"end":22.625,"text":"Fetch wipe canister"},{"start":22.625,"end":23.625,"text":"Return supplies"},{"start":23.625,"end":25.0,"text":"Reconnect receiver to fixed tongue · secure net"},{"start":25.0,"end":25.917,"text":"Handset · firmer cable and replacement"},{"start":25.917,"end":29.417,"text":"Pick up handset"},{"start":29.417,"end":31.0,"text":"Return handset · cable settles"},{"start":31.0,"end":31.917,"text":"Power plug · unplug, hold and reconnect"},{"start":31.917,"end":32.958,"text":"Withdraw power plug"},{"start":32.958,"end":34.208,"text":"Hold disconnected plug"},{"start":34.208,"end":35.333,"text":"Release plug · restrained cable drop"},{"start":35.333,"end":37.0,"text":"Reconnect to socket"}]},{"id":"01_rear_doors","label":"Rear doors","title":"Rear doors · clear opening","description":"Open both doors. Keep the passage clear.","seconds":6.0,"src":"videos/01_rear_doors.mp4","poster":"media/01_rear_doors.jpg","captions":"videos/01_rear_doors.vtt","cues":[{"start":0.0,"end":0.792,"text":"Rest · secured equipment"},{"start":0.792,"end":1.208,"text":"Open left door"},{"start":1.208,"end":4.292,"text":"Open right door"},{"start":4.292,"end":4.458,"text":"Close left door"},{"start":4.458,"end":6.0,"text":"Close right door"}]},{"id":"02_belt_buckle","label":"Bed belt","title":"Bed buckle · continuous belt connection and reinsertion","description":"Release the tongue, then reconnect the belt.","seconds":6.0,"src":"videos/02_belt_buckle.mp4","poster":"media/02_belt_buckle.jpg","captions":"videos/02_belt_buckle.vtt","cues":[{"start":0.0,"end":0.958,"text":"Rest · secured equipment"},{"start":0.958,"end":4.25,"text":"Press red button · release tongue and belt"},{"start":4.25,"end":6.0,"text":"Insert metal tongue · refasten belt"}]},{"id":"03_ecg_net","label":"ECG net","title":"ECG net · fixed suspension and lower release","description":"Release the lower net; keep its upper supports fixed.","seconds":7.0,"src":"videos/03_ecg_net.mp4","poster":"media/03_ecg_net.jpg","captions":"videos/03_ecg_net.vtt","cues":[{"start":0.0,"end":0.958,"text":"Rest · secured equipment"},{"start":0.958,"end":2.667,"text":"Press aisle buckle · lower corner drops; upper support stays"},{"start":2.667,"end":4.917,"text":"Press wall buckle · lower net folds; supports stay"},{"start":4.917,"end":5.5,"text":"Insert wall tongue"},{"start":5.5,"end":7.0,"text":"Insert aisle tongue · net secured"}]},{"id":"04_cargo_net","label":"Cargo net","title":"Cargo net · fixed wall attachment and supply retrieval","description":"Unfasten the corner and retrieve a supply bottle.","seconds":6.0,"src":"videos/04_cargo_net.mp4","poster":"media/04_cargo_net.jpg","captions":"videos/04_cargo_net.vtt","cues":[{"start":0.0,"end":0.792,"text":"Rest · secured equipment"},{"start":0.792,"end":1.917,"text":"Press red button · release net; fixed ties stay"},{"start":1.917,"end":3.625,"text":"Fetch wipe canister"},{"start":3.625,"end":4.625,"text":"Return supplies"},{"start":4.625,"end":6.0,"text":"Reconnect receiver to fixed tongue · secure net"}]},{"id":"05_phone_cable","label":"Handset","title":"Handset · firmer cable and replacement","description":"Lift the phone and return it to the cradle.","seconds":6.0,"src":"videos/05_phone_cable.mp4","poster":"media/05_phone_cable.jpg","captions":"videos/05_phone_cable.vtt","cues":[{"start":0.0,"end":0.917,"text":"Rest · secured equipment"},{"start":0.917,"end":4.417,"text":"Pick up handset"},{"start":4.417,"end":6.0,"text":"Return handset · cable settles"}]},{"id":"06_power_cable","label":"Power plug","title":"Power plug · unplug, hold and reconnect","description":"Unplug, hold and reconnect the cable.","seconds":6.0,"src":"videos/06_power_cable.mp4","poster":"media/06_power_cable.jpg","captions":"videos/06_power_cable.vtt","cues":[{"start":0.0,"end":0.917,"text":"Rest · secured equipment"},{"start":0.917,"end":1.958,"text":"Withdraw power plug"},{"start":1.958,"end":3.208,"text":"Hold disconnected plug"},{"start":3.208,"end":4.333,"text":"Release plug · restrained cable drop"},{"start":4.333,"end":6.0,"text":"Reconnect to socket"}]}]</script>
+<script>
+(() => {
+  'use strict';
+  const films=JSON.parse(document.getElementById('release-film-data').textContent);
+  const player=document.getElementById('release-film');
+  const caption=document.getElementById('film-caption');
+  const status=document.getElementById('film-status');
+  const start=document.querySelector('.video-start');
+  const choices=[...document.querySelectorAll('[data-film]')];
+  const speed=document.getElementById('playback-speed');
+  let selected=films[0];
+  let hasPlayed=false;
+  function updateCaption(){const cue=selected.cues.find(c=>player.currentTime>=c.start&&player.currentTime<c.end);caption.textContent=cue?cue.text:selected.description;}
+  function play(){start.hidden=true;caption.classList.remove('error');player.play().catch(()=>{start.hidden=false;status.textContent='Use the video play button to start playback.';});}
+  function selectFilm(id,shouldPlay=true){
+    const next=films.find(f=>f.id===id);if(!next)return;
+    player.pause();selected=next;hasPlayed=false;player.src=next.src;player.poster=next.poster;player.setAttribute('aria-label',next.title);player.load();player.playbackRate=Number(speed.value);
+    choices.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.film===id)));
+    document.getElementById('film-download').href=next.src;document.getElementById('caption-download').href=next.captions;
+    caption.classList.remove('error');caption.textContent=next.description;status.textContent=next.label+' selected. '+next.seconds+' seconds.';start.setAttribute('aria-label','Play '+next.label.toLowerCase());start.hidden=false;
+    if(shouldPlay)play();
+  }
+  choices.forEach(button=>button.addEventListener('click',()=>selectFilm(button.dataset.film)));
+  start.addEventListener('click',play);
+  speed.addEventListener('change',()=>{player.playbackRate=Number(speed.value);});
+  player.addEventListener('play',()=>{hasPlayed=true;start.hidden=true;});
+  player.addEventListener('pause',()=>{start.hidden=hasPlayed;});
+  player.addEventListener('ended',()=>{start.hidden=false;start.setAttribute('aria-label','Replay '+selected.label.toLowerCase());});
+  player.addEventListener('timeupdate',updateCaption);
+  player.addEventListener('loadedmetadata',()=>{player.playbackRate=Number(speed.value);});
+  player.addEventListener('error',()=>{caption.classList.add('error');caption.textContent='This film could not load. Use “Save this film” to open the video directly.';status.textContent='Video unavailable. A direct video link is available below.';start.hidden=true;});
+  document.addEventListener('visibilitychange',()=>{if(document.hidden&&!player.paused)player.pause();});
+})();
+</script>
+</body>
 </html>
