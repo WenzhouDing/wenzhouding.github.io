@@ -295,21 +295,26 @@
         "Curbside kick strip behind bench",
         "Curbside lining behind bench",
         "DISPLAY | Bench separate retracted lap tongue woven surface",
-        "DISPLAY | Captain paired harness woven surface",
         "DISPLAY | Cot cotton sheet retained smooth surface",
-        "DISPLAY | Cot thigh restraint / closed buckle and loose headward adjustment loop woven surface",
-        "DISPLAY | Cot waist restraint / transverse closure and loose connector branches woven surface",
-        "DISPLAY | ECG instrument securing band and lower latch woven surface",
-        "DISPLAY | Forward bench paired passenger harness woven surface",
-        "DISPLAY | Inset paired harness woven surface",
-        "DISPLAY | Rear bench paired passenger harness woven surface",
         "Driver side interior lining",
+        "ECG aisle ceiling mount",
+        "ECG aisle lower support lug",
+        "ECG aisle upper oval ring",
         "ECG monitor mounting tray",
         "ECG partition black crash pad",
+        "ECG row 1 tie clamp",
+        "ECG row 1 wall lug",
+        "ECG row 3 tie clamp",
+        "ECG row 3 wall lug",
+        "ECG row 5 tie clamp",
+        "ECG row 5 wall lug",
         "ECG securing band concealed rear tray anchor",
         "ECG securing band lower fixed lug",
         "ECG soft side pouch -1",
         "ECG soft side pouch 1",
+        "ECG wall ceiling mount",
+        "ECG wall lower support lug",
+        "ECG wall upper oval ring",
         "Fire extinguisher retaining cradle",
         "Fire extinguisher retaining cradle.001",
         "Fire extinguisher silver lower sleeve",
@@ -617,7 +622,6 @@
         "Rear corner | Upper shroud louver surround",
         "Rear corner | Upper structural shelf",
         "Rear opening bench vertical entry grab",
-        "Rear opening center meeting seal",
         "Rear opening driver vertical entry grab",
         "Rear opening narrow black jamb",
         "Rear opening narrow black jamb.001",
@@ -886,7 +890,6 @@
         "Upper treatment cabinet track groove.003",
         "Upper treatment cabinet upright",
         "Upper treatment cabinet upright.001",
-        "V2 CHAIN14 | Cot ankle | Continuous woven surface",
         "V9 | captain.bench fixed hip anchor",
         "V9 | captain.bench shoulder guide",
         "V9 | captain.bench tail adjuster",
@@ -3670,6 +3673,332 @@
       "parentId": "PART_phys_defibrillator"
     },
     {
+      "id": "PART_captain_paired_harness",
+      "label": "Captain paired harness",
+      "kind": "webbing",
+      "action": "webbing",
+      "nodeNames": [
+        "PART_captain_paired_harness"
+      ],
+      "sourceNames": [
+        "DISPLAY | Captain paired harness woven surface"
+      ],
+      "bounds": {
+        "min": [
+          -0.6044953,
+          0.2797914,
+          -1.4823812
+        ],
+        "max": [
+          0.0534912,
+          1.3994349,
+          -1.3779758
+        ]
+      },
+      "pivot": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "min": 0.0,
+      "max": 1.0,
+      "travel": 1.0,
+      "sourceOwner": "Captain paired harness",
+      "mass": 0.08865338721907243,
+      "parentId": null
+    },
+    {
+      "id": "PART_cot_thigh_restraint_closed_buckle_and_loose_headward_adjustment_loop",
+      "label": "Cot thigh restraint / closed buckle and loose headward adjustment loop",
+      "kind": "webbing",
+      "action": "webbing",
+      "nodeNames": [
+        "PART_cot_thigh_restraint_closed_buckle_and_loose_headward_adjustment_loop"
+      ],
+      "sourceNames": [
+        "DISPLAY | Cot thigh restraint / closed buckle and loose headward adjustment loop woven surface"
+      ],
+      "bounds": {
+        "min": [
+          -0.3276739,
+          0.6945786,
+          0.0785694
+        ],
+        "max": [
+          0.3076629,
+          0.8666338,
+          0.512548
+        ]
+      },
+      "pivot": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "min": 0.0,
+      "max": 1.0,
+      "travel": 1.0,
+      "sourceOwner": "Cot thigh restraint / closed buckle and loose headward adjustment loop",
+      "mass": 0.04132582528684087,
+      "parentId": null
+    },
+    {
+      "id": "PART_cot_waist_restraint_transverse_closure_and_loose_connector_branches",
+      "label": "Cot waist restraint / transverse closure and loose connector branches",
+      "kind": "webbing",
+      "action": "webbing",
+      "nodeNames": [
+        "PART_cot_waist_restraint_transverse_closure_and_loose_connector_branches"
+      ],
+      "sourceNames": [
+        "DISPLAY | Cot waist restraint / transverse closure and loose connector branches woven surface"
+      ],
+      "bounds": {
+        "min": [
+          -0.3278627,
+          0.7013152,
+          -0.6321723
+        ],
+        "max": [
+          0.3078743,
+          0.8362023,
+          0.4426747
+        ]
+      },
+      "pivot": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "min": 0.0,
+      "max": 1.0,
+      "travel": 1.0,
+      "sourceOwner": "Cot waist restraint / transverse closure and loose connector branches",
+      "mass": 0.060348712622158004,
+      "parentId": null
+    },
+    {
+      "id": "PART_ecg_instrument_securing_band_and_lower_latch",
+      "label": "ECG instrument securing band and lower latch",
+      "kind": "webbing",
+      "action": "webbing",
+      "nodeNames": [
+        "PART_ecg_instrument_securing_band_and_lower_latch"
+      ],
+      "sourceNames": [
+        "DISPLAY | ECG instrument securing band and lower latch woven surface"
+      ],
+      "bounds": {
+        "min": [
+          0.6221209,
+          0.3134233,
+          -0.3657599
+        ],
+        "max": [
+          1.1577159,
+          0.8692897,
+          -0.3154891
+        ]
+      },
+      "pivot": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "min": 0.0,
+      "max": 1.0,
+      "travel": 1.0,
+      "sourceOwner": "ECG instrument securing band and lower latch",
+      "mass": 0.040411262236020866,
+      "parentId": null
+    },
+    {
+      "id": "PART_forward_bench_paired_passenger_harness",
+      "label": "Forward bench paired passenger harness",
+      "kind": "webbing",
+      "action": "webbing",
+      "nodeNames": [
+        "PART_forward_bench_paired_passenger_harness"
+      ],
+      "sourceNames": [
+        "DISPLAY | Forward bench paired passenger harness woven surface"
+      ],
+      "bounds": {
+        "min": [
+          1.065082,
+          0.5524938,
+          -0.4711933
+        ],
+        "max": [
+          1.1855627,
+          1.2015785,
+          0.0602061
+        ]
+      },
+      "pivot": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "min": 0.0,
+      "max": 1.0,
+      "travel": 1.0,
+      "sourceOwner": "Forward bench paired passenger harness",
+      "mass": 0.09816421108133287,
+      "parentId": null
+    },
+    {
+      "id": "PART_inset_paired_harness",
+      "label": "Inset paired harness",
+      "kind": "webbing",
+      "action": "webbing",
+      "nodeNames": [
+        "PART_inset_paired_harness"
+      ],
+      "sourceNames": [
+        "DISPLAY | Inset paired harness woven surface"
+      ],
+      "bounds": {
+        "min": [
+          -1.1645845,
+          0.1886011,
+          -0.2917822
+        ],
+        "max": [
+          -0.8661096,
+          1.1441972,
+          0.4216102
+        ]
+      },
+      "pivot": [
+        0.0,
+        0.0,
+        -0.098
+      ],
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "min": 0.0,
+      "max": 1.0,
+      "travel": 1.0,
+      "sourceOwner": "Inset paired harness",
+      "mass": 0.14257530112922306,
+      "parentId": null
+    },
+    {
+      "id": "PART_rear_bench_paired_passenger_harness",
+      "label": "Rear bench paired passenger harness",
+      "kind": "webbing",
+      "action": "webbing",
+      "nodeNames": [
+        "PART_rear_bench_paired_passenger_harness"
+      ],
+      "sourceNames": [
+        "DISPLAY | Rear bench paired passenger harness woven surface"
+      ],
+      "bounds": {
+        "min": [
+          1.065082,
+          0.5524938,
+          0.6166608
+        ],
+        "max": [
+          1.1855627,
+          1.2015784,
+          1.1480602
+        ]
+      },
+      "pivot": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "min": 0.0,
+      "max": 1.0,
+      "travel": 1.0,
+      "sourceOwner": "Rear bench paired passenger harness",
+      "mass": 0.09816421279434992,
+      "parentId": null
+    },
+    {
+      "id": "PART_ecg_aisle_extension_clamp_adjuster",
+      "label": "ECG aisle extension clamp adjuster",
+      "kind": "release_hardware",
+      "action": "release_hardware",
+      "nodeNames": [
+        "PART_ecg_aisle_extension_clamp_adjuster"
+      ],
+      "sourceNames": [
+        "ECG aisle extension clamp adjuster"
+      ],
+      "bounds": {
+        "min": [
+          0.6768414,
+          1.5454845,
+          -0.7308916
+        ],
+        "max": [
+          0.7405306,
+          1.5955613,
+          -0.6839014
+        ]
+      },
+      "pivot": [
+        0.708686,
+        1.5705229,
+        -0.7073965
+      ],
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "min": 0.0,
+      "max": 1.0,
+      "travel": 1.0,
+      "sourceOwner": "ECG aisle extension clamp adjuster",
+      "mass": 0.0,
+      "webbingId": "PART_ecg_end_barrier_connected_webbing_and_wall_ties",
+      "releaseAnchor": [
+        0.708686,
+        1.5705229,
+        -0.7073965
+      ],
+      "parentId": null
+    },
+    {
       "id": "PART_ecg_end_barrier_connected_webbing_and_wall_ties",
       "label": "ECG end barrier connected webbing and wall ties",
       "kind": "net",
@@ -3678,38 +4007,24 @@
         "PART_ecg_end_barrier_connected_webbing_and_wall_ties"
       ],
       "sourceNames": [
-        "ECG aisle ceiling mount",
-        "ECG aisle extension clamp adjuster",
-        "ECG aisle lower support lug",
-        "ECG aisle upper oval ring",
-        "ECG end barrier connected webbing and wall ties",
-        "ECG row 1 tie clamp",
-        "ECG row 1 wall lug",
-        "ECG row 3 tie clamp",
-        "ECG row 3 wall lug",
-        "ECG row 5 tie clamp",
-        "ECG row 5 wall lug",
-        "ECG wall ceiling mount",
-        "ECG wall extension clamp adjuster",
-        "ECG wall lower support lug",
-        "ECG wall upper oval ring"
+        "ECG end barrier connected webbing and wall ties"
       ],
       "bounds": {
         "min": [
-          0.6594896,
-          0.1437733,
-          -0.8000463
+          0.6709529,
+          0.1703532,
+          -0.7855293
         ],
         "max": [
-          1.2000706,
-          1.9417781,
-          -0.6703007
+          1.1766964,
+          1.9193133,
+          -0.6797653
         ]
       },
       "pivot": [
-        0.9297801000000001,
-        0.1437733,
-        -0.7351734999999999
+        0.92382465,
+        0.1703532,
+        -0.7326473
       ],
       "axis": [
         1,
@@ -3761,6 +4076,52 @@
       "travel": 0.055,
       "sourceOwner": "PHYS | ECG monitor patient plug",
       "mass": 0.017999999225139618,
+      "parentId": null
+    },
+    {
+      "id": "PART_ecg_wall_extension_clamp_adjuster",
+      "label": "ECG wall extension clamp adjuster",
+      "kind": "release_hardware",
+      "action": "release_hardware",
+      "nodeNames": [
+        "PART_ecg_wall_extension_clamp_adjuster"
+      ],
+      "sourceNames": [
+        "ECG wall extension clamp adjuster"
+      ],
+      "bounds": {
+        "min": [
+          1.001231,
+          1.5450724,
+          -0.7199625
+        ],
+        "max": [
+          1.065928,
+          1.5953063,
+          -0.6915625
+        ]
+      },
+      "pivot": [
+        1.0335795,
+        1.5701894,
+        -0.7057625
+      ],
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "min": 0.0,
+      "max": 1.0,
+      "travel": 1.0,
+      "sourceOwner": "ECG wall extension clamp adjuster",
+      "mass": 0.0,
+      "webbingId": "PART_ecg_end_barrier_connected_webbing_and_wall_ties",
+      "releaseAnchor": [
+        1.0335795,
+        1.5701894,
+        -0.7057625
+      ],
       "parentId": null
     },
     {
@@ -3889,7 +4250,7 @@
       "travel": 1.0,
       "sourceOwner": "PHYS | Front cubby green canister lid",
       "mass": 0.10000000149011612,
-      "parentId": "PART_phys_front_storage_wipe_canister"
+      "parentId": null
     },
     {
       "id": "PART_phys_front_storage_wipe_canister",
@@ -5803,7 +6164,8 @@
         "Rear door Driver skin fastener.007",
         "Rear door Driver skin fastener.008",
         "Rear door Driver skin fastener.009",
-        "Rear door Driver speckled inner skin"
+        "Rear door Driver speckled inner skin",
+        "Rear opening center meeting seal"
       ],
       "bounds": {
         "min": [
@@ -5812,7 +6174,7 @@
           1.7328683
         ],
         "max": [
-          -0.0106083,
+          -0.0035,
           1.78,
           1.8825002
         ]
@@ -7285,6 +7647,46 @@
       "parentId": null
     },
     {
+      "id": "PART_cot_ankle_restraint_closed_buckle_and_folded_adjustment_tail",
+      "label": "Cot ankle restraint / closed buckle and folded adjustment tail",
+      "kind": "webbing",
+      "action": "webbing",
+      "nodeNames": [
+        "PART_cot_ankle_restraint_closed_buckle_and_folded_adjustment_tail"
+      ],
+      "sourceNames": [
+        "V2 CHAIN14 | Cot ankle | Continuous woven surface"
+      ],
+      "bounds": {
+        "min": [
+          -0.3286228,
+          0.694757,
+          1.0789186
+        ],
+        "max": [
+          0.308599,
+          0.8058658,
+          1.1331877
+        ]
+      },
+      "pivot": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "min": 0.0,
+      "max": 1.0,
+      "travel": 1.0,
+      "sourceOwner": "Cot ankle restraint / closed buckle and folded adjustment tail",
+      "mass": 0.03704092465733257,
+      "parentId": null
+    },
+    {
       "id": "PART_phys_warmer_cabinet_door",
       "label": "Warmer cabinet door",
       "kind": "hinge",
@@ -7444,15 +7846,25 @@
         0.9959124,
         0.7429392
       ],
+      "restTongueAnchor": [
+        1.0745806,
+        0.9959124,
+        0.7429392
+      ],
       "initialLatched": true,
       "sourceReceiver": "Bench forward upper red-button receiver",
       "connection": "bench_rear_forward_upper_release",
       "webbingOwner": "Rear bench paired passenger harness",
-      "webbingId": null,
+      "webbingId": "PART_rear_bench_paired_passenger_harness",
       "nodeNames": [
         "buckle_bench_forward_upper_red_button_receiver_receiver",
         "buckle_bench_forward_upper_red_button_receiver_tongue",
         "buckle_bench_forward_upper_red_button_receiver_button"
+      ],
+      "restTongueAxis": [
+        -0.0317827,
+        0.9993128,
+        -0.0190768
       ],
       "threadedTab": true,
       "receiverConstruction": "One rounded molded shell with an actual cut tongue insertion mouth."
@@ -7491,15 +7903,25 @@
         0.9966242,
         -0.3460917
       ],
+      "restTongueAnchor": [
+        1.0727227,
+        0.9966242,
+        -0.3460917
+      ],
       "initialLatched": true,
       "sourceReceiver": "Bench forward upper red-button receiver.001",
       "connection": "bench_forward_forward_upper_release",
       "webbingOwner": "Forward bench paired passenger harness",
-      "webbingId": null,
+      "webbingId": "PART_forward_bench_paired_passenger_harness",
       "nodeNames": [
         "buckle_bench_forward_upper_red_button_receiver_001_receiver",
         "buckle_bench_forward_upper_red_button_receiver_001_tongue",
         "buckle_bench_forward_upper_red_button_receiver_001_button"
+      ],
+      "restTongueAxis": [
+        -0.0915526,
+        0.9954291,
+        -0.0271849
       ],
       "threadedTab": true,
       "receiverConstruction": "One rounded molded shell with an actual cut tongue insertion mouth."
@@ -7538,15 +7960,25 @@
         0.5031353,
         1.0033921
       ],
+      "restTongueAnchor": [
+        1.1013062,
+        0.5820012,
+        0.7438427
+      ],
       "initialLatched": false,
       "sourceReceiver": "Bench loose lap receiver",
       "connection": "bench_rear_lap_pair_release",
       "webbingOwner": "Rear bench paired passenger harness",
-      "webbingId": null,
+      "webbingId": "PART_rear_bench_paired_passenger_harness",
       "nodeNames": [
         "buckle_bench_loose_lap_receiver_receiver",
         "buckle_bench_loose_lap_receiver_tongue",
         "buckle_bench_loose_lap_receiver_button"
+      ],
+      "restTongueAxis": [
+        -0.0380414,
+        -0.9858949,
+        -0.1629854
       ],
       "threadedTab": true,
       "receiverConstruction": "One rounded molded shell with an actual cut tongue insertion mouth."
@@ -7585,15 +8017,25 @@
         0.60141,
         -0.0701018
       ],
+      "restTongueAnchor": [
+        1.0990232,
+        0.5823131,
+        -0.343921
+      ],
       "initialLatched": false,
       "sourceReceiver": "Bench loose lap receiver.001",
       "connection": "bench_forward_lap_pair_release",
       "webbingOwner": "Forward bench paired passenger harness",
-      "webbingId": null,
+      "webbingId": "PART_forward_bench_paired_passenger_harness",
       "nodeNames": [
         "buckle_bench_loose_lap_receiver_001_receiver",
         "buckle_bench_loose_lap_receiver_001_tongue",
         "buckle_bench_loose_lap_receiver_001_button"
+      ],
+      "restTongueAxis": [
+        -0.3272721,
+        0.9392042,
+        0.103868
       ],
       "threadedTab": true,
       "receiverConstruction": "One rounded molded shell with an actual cut tongue insertion mouth."
@@ -7632,15 +8074,25 @@
         0.9597862,
         1.0039309
       ],
+      "restTongueAnchor": [
+        1.0777167,
+        0.9597862,
+        1.0039309
+      ],
       "initialLatched": true,
       "sourceReceiver": "Bench rearward upper red-button receiver",
       "connection": "bench_rear_rearward_upper_release",
       "webbingOwner": "Rear bench paired passenger harness",
-      "webbingId": null,
+      "webbingId": "PART_rear_bench_paired_passenger_harness",
       "nodeNames": [
         "buckle_bench_rearward_upper_red_button_receiver_receiver",
         "buckle_bench_rearward_upper_red_button_receiver_tongue",
         "buckle_bench_rearward_upper_red_button_receiver_button"
+      ],
+      "restTongueAxis": [
+        -0.0002999,
+        0.9999921,
+        0.0039668
       ],
       "threadedTab": true,
       "receiverConstruction": "One rounded molded shell with an actual cut tongue insertion mouth."
@@ -7679,15 +8131,25 @@
         0.9792535,
         -0.0803953
       ],
+      "restTongueAnchor": [
+        1.0784987,
+        0.9792535,
+        -0.0803953
+      ],
       "initialLatched": true,
       "sourceReceiver": "Bench rearward upper red-button receiver.001",
       "connection": "bench_forward_rearward_upper_release",
       "webbingOwner": "Forward bench paired passenger harness",
-      "webbingId": null,
+      "webbingId": "PART_forward_bench_paired_passenger_harness",
       "nodeNames": [
         "buckle_bench_rearward_upper_red_button_receiver_001_receiver",
         "buckle_bench_rearward_upper_red_button_receiver_001_tongue",
         "buckle_bench_rearward_upper_red_button_receiver_001_button"
+      ],
+      "restTongueAxis": [
+        0.0009493,
+        0.9999599,
+        0.0089122
       ],
       "threadedTab": true,
       "receiverConstruction": "One rounded molded shell with an actual cut tongue insertion mouth."
@@ -7726,15 +8188,25 @@
         0.8036685,
         0.4760264
       ],
+      "restTongueAnchor": [
+        0.0428287,
+        0.8036685,
+        0.4760264
+      ],
       "initialLatched": true,
       "sourceReceiver": "Cot thigh | Rolled receiver body",
       "connection": "cot_thigh_latch",
       "webbingOwner": "Cot thigh restraint / closed buckle and loose headward adjustment loop",
-      "webbingId": null,
+      "webbingId": "PART_cot_thigh_restraint_closed_buckle_and_loose_headward_adjustment_loop",
       "nodeNames": [
         "buckle_cot_thigh_rolled_receiver_body_receiver",
         "buckle_cot_thigh_rolled_receiver_body_tongue",
         "buckle_cot_thigh_rolled_receiver_body_button"
+      ],
+      "restTongueAxis": [
+        0.9882613,
+        -0.119437,
+        -0.0952596
       ],
       "threadedTab": true,
       "receiverConstruction": "One rounded molded shell with an actual cut tongue insertion mouth."
@@ -7773,15 +8245,25 @@
         0.8090537,
         -0.1336425
       ],
+      "restTongueAnchor": [
+        -0.0298373,
+        0.8090537,
+        -0.1336425
+      ],
       "initialLatched": true,
       "sourceReceiver": "Cot waist | Side-facing primary receiver",
       "connection": "cot_waist_latch",
       "webbingOwner": "Cot waist restraint / transverse closure and loose connector branches",
-      "webbingId": null,
+      "webbingId": "PART_cot_waist_restraint_transverse_closure_and_loose_connector_branches",
       "nodeNames": [
         "buckle_cot_waist_side_facing_primary_receiver_receiver",
         "buckle_cot_waist_side_facing_primary_receiver_tongue",
         "buckle_cot_waist_side_facing_primary_receiver_button"
+      ],
+      "restTongueAxis": [
+        -0.9989584,
+        -0.0438693,
+        0.0125492
       ],
       "threadedTab": true,
       "receiverConstruction": "One rounded molded shell with an actual cut tongue insertion mouth."
@@ -7820,15 +8302,25 @@
         0.7975795,
         0.4504572
       ],
+      "restTongueAnchor": [
+        0.0537243,
+        0.7975795,
+        0.4504572
+      ],
       "initialLatched": true,
       "sourceReceiver": "Cot waist | Spare red-button receiver on loose branch",
       "connection": "cot.ankle",
       "webbingOwner": "Cot waist restraint / transverse closure and loose connector branches",
-      "webbingId": null,
+      "webbingId": "PART_cot_waist_restraint_transverse_closure_and_loose_connector_branches",
       "nodeNames": [
         "buckle_cot_waist_spare_red_button_receiver_on_loose_branch_receiver",
         "buckle_cot_waist_spare_red_button_receiver_on_loose_branch_tongue",
         "buckle_cot_waist_spare_red_button_receiver_on_loose_branch_button"
+      ],
+      "restTongueAxis": [
+        0.875574,
+        -0.0022266,
+        0.4830791
       ],
       "threadedTab": true,
       "receiverConstruction": "One rounded molded shell with an actual cut tongue insertion mouth."
@@ -7867,6 +8359,11 @@
         1.6599547,
         -0.6935756
       ],
+      "restTongueAnchor": [
+        0.7087779,
+        1.6599547,
+        -0.6935756
+      ],
       "initialLatched": true,
       "sourceReceiver": "ECG aisle upper release receiver",
       "connection": "ecg_aisle_upper_release",
@@ -7876,6 +8373,11 @@
         "buckle_ecg_aisle_upper_release_receiver_receiver",
         "buckle_ecg_aisle_upper_release_receiver_tongue",
         "buckle_ecg_aisle_upper_release_receiver_button"
+      ],
+      "restTongueAxis": [
+        0.0316075,
+        -0.9813451,
+        0.1896388
       ],
       "threadedTab": true,
       "receiverConstruction": "One rounded molded shell with an actual cut tongue insertion mouth."
@@ -7914,15 +8416,25 @@
         0.268703,
         -0.3401987
       ],
+      "restTongueAnchor": [
+        0.6227049,
+        0.268703,
+        -0.3401987
+      ],
       "initialLatched": true,
       "sourceReceiver": "ECG securing band lower receiver",
       "connection": "ecg_instrument_lower_release",
       "webbingOwner": "ECG instrument securing band and lower latch",
-      "webbingId": null,
+      "webbingId": "PART_ecg_instrument_securing_band_and_lower_latch",
       "nodeNames": [
         "buckle_ecg_securing_band_lower_receiver_receiver",
         "buckle_ecg_securing_band_lower_receiver_tongue",
         "buckle_ecg_securing_band_lower_receiver_button"
+      ],
+      "restTongueAxis": [
+        -0.2913777,
+        -0.9566072,
+        -0.0013414
       ],
       "threadedTab": true,
       "receiverConstruction": "One rounded molded shell with an actual cut tongue insertion mouth."
@@ -7961,6 +8473,11 @@
         1.6561106,
         -0.7215613
       ],
+      "restTongueAnchor": [
+        1.0527775,
+        1.6561106,
+        -0.7215613
+      ],
       "initialLatched": true,
       "sourceReceiver": "ECG wall upper release receiver",
       "connection": "ecg_wall_upper_release",
@@ -7970,6 +8487,11 @@
         "buckle_ecg_wall_upper_release_receiver_receiver",
         "buckle_ecg_wall_upper_release_receiver_tongue",
         "buckle_ecg_wall_upper_release_receiver_button"
+      ],
+      "restTongueAxis": [
+        0.0801564,
+        -0.9432862,
+        -0.3221586
       ],
       "threadedTab": true,
       "receiverConstruction": "One rounded molded shell with an actual cut tongue insertion mouth."
@@ -8008,15 +8530,25 @@
         0.7996056,
         1.1095498
       ],
+      "restTongueAnchor": [
+        -0.0427809,
+        0.7996056,
+        1.1095498
+      ],
       "initialLatched": true,
       "sourceReceiver": "V2 | Cot ankle | Black receiver with insertion mouth",
       "connection": "cot.ankle",
       "webbingOwner": "Cot ankle restraint / closed buckle and folded adjustment tail",
-      "webbingId": null,
+      "webbingId": "PART_cot_ankle_restraint_closed_buckle_and_folded_adjustment_tail",
       "nodeNames": [
         "buckle_cot_ankle_receiver",
         "buckle_cot_ankle_tongue",
         "buckle_cot_ankle_button"
+      ],
+      "restTongueAxis": [
+        1.0,
+        0.0,
+        0.0
       ],
       "threadedTab": true,
       "receiverConstruction": "One rounded molded shell with an actual cut tongue insertion mouth."
@@ -8055,15 +8587,25 @@
         1.2545645,
         -1.453189
       ],
+      "restTongueAnchor": [
+        -0.0913684,
+        1.2545645,
+        -1.453189
+      ],
       "initialLatched": true,
       "sourceReceiver": "V9 | captain.bench shoulder release",
       "connection": "captain.bench.shoulder_release",
       "webbingOwner": "Captain paired harness",
-      "webbingId": null,
+      "webbingId": "PART_captain_paired_harness",
       "nodeNames": [
         "buckle_v9_captain_bench_shoulder_release_receiver",
         "buckle_v9_captain_bench_shoulder_release_tongue",
         "buckle_v9_captain_bench_shoulder_release_button"
+      ],
+      "restTongueAxis": [
+        -0.0215425,
+        0.9915941,
+        -0.127581
       ],
       "threadedTab": true,
       "receiverConstruction": "One rounded molded shell with an actual cut tongue insertion mouth."
@@ -8102,15 +8644,25 @@
         1.2544656,
         -1.4505537
       ],
+      "restTongueAnchor": [
+        -0.4415457,
+        1.2544656,
+        -1.4505537
+      ],
       "initialLatched": true,
       "sourceReceiver": "V9 | captain.driver shoulder release",
       "connection": "captain.driver.shoulder_release",
       "webbingOwner": "Captain paired harness",
-      "webbingId": null,
+      "webbingId": "PART_captain_paired_harness",
       "nodeNames": [
         "buckle_v9_captain_driver_shoulder_release_receiver",
         "buckle_v9_captain_driver_shoulder_release_tongue",
         "buckle_v9_captain_driver_shoulder_release_button"
+      ],
+      "restTongueAxis": [
+        0.0270547,
+        0.9910186,
+        -0.1309589
       ],
       "threadedTab": true,
       "receiverConstruction": "One rounded molded shell with an actual cut tongue insertion mouth."
@@ -8149,15 +8701,25 @@
         0.6521168,
         -1.419307
       ],
+      "restTongueAnchor": [
+        -0.0227628,
+        0.6218303,
+        -1.443367
+      ],
       "initialLatched": false,
       "sourceReceiver": "V9 | captain.lap_pair_lower receiver",
       "connection": "captain.lap_pair_lower",
       "webbingOwner": "Captain paired harness",
-      "webbingId": null,
+      "webbingId": "PART_captain_paired_harness",
       "nodeNames": [
         "buckle_v9_captain_lap_pair_lower_receiver_receiver",
         "buckle_v9_captain_lap_pair_lower_receiver_tongue",
         "buckle_v9_captain_lap_pair_lower_receiver_button"
+      ],
+      "restTongueAxis": [
+        0.3167303,
+        0.8176681,
+        0.4807295
       ],
       "threadedTab": true,
       "receiverConstruction": "One rounded molded shell with an actual cut tongue insertion mouth."
@@ -8196,15 +8758,25 @@
         0.7691851,
         -1.4368086
       ],
+      "restTongueAnchor": [
+        -0.027329,
+        0.7301112,
+        -1.4441329
+      ],
       "initialLatched": false,
       "sourceReceiver": "V9 | captain.lap_pair_upper receiver",
       "connection": "captain.lap_pair_upper",
       "webbingOwner": "Captain paired harness",
-      "webbingId": null,
+      "webbingId": "PART_captain_paired_harness",
       "nodeNames": [
         "buckle_v9_captain_lap_pair_upper_receiver_receiver",
         "buckle_v9_captain_lap_pair_upper_receiver_tongue",
         "buckle_v9_captain_lap_pair_upper_receiver_button"
+      ],
+      "restTongueAxis": [
+        0.1002012,
+        0.989751,
+        -0.1017481
       ],
       "threadedTab": true,
       "receiverConstruction": "One rounded molded shell with an actual cut tongue insertion mouth."
@@ -8243,6 +8815,11 @@
         1.2689946,
         -1.5992044
       ],
+      "restTongueAnchor": [
+        0.7827028,
+        1.2689946,
+        -1.5992044
+      ],
       "initialLatched": true,
       "sourceReceiver": "V9 | cargo top left release",
       "connection": "cargo.top_left_release",
@@ -8252,6 +8829,11 @@
         "buckle_v9_cargo_top_left_release_receiver",
         "buckle_v9_cargo_top_left_release_tongue",
         "buckle_v9_cargo_top_left_release_button"
+      ],
+      "restTongueAxis": [
+        0.9684227,
+        -0.2216509,
+        -0.114142
       ],
       "threadedTab": true,
       "receiverConstruction": "One rounded molded shell with an actual cut tongue insertion mouth."
@@ -8290,15 +8872,25 @@
         1.0372158,
         -0.130934
       ],
+      "restTongueAnchor": [
+        -1.0227079,
+        1.0372158,
+        -0.130934
+      ],
       "initialLatched": true,
       "sourceReceiver": "V9 | inset.front shoulder release",
       "connection": "inset.front.shoulder_release",
       "webbingOwner": "Inset paired harness",
-      "webbingId": null,
+      "webbingId": "PART_inset_paired_harness",
       "nodeNames": [
         "buckle_v9_inset_front_shoulder_release_receiver",
         "buckle_v9_inset_front_shoulder_release_tongue",
         "buckle_v9_inset_front_shoulder_release_button"
+      ],
+      "restTongueAxis": [
+        0.6985487,
+        0.575309,
+        -0.4254987
       ],
       "threadedTab": true,
       "receiverConstruction": "One rounded molded shell with an actual cut tongue insertion mouth."
@@ -8337,15 +8929,25 @@
         0.5075911,
         0.3504821
       ],
+      "restTongueAnchor": [
+        -1.0292075,
+        0.198594,
+        -0.2769144
+      ],
       "initialLatched": false,
       "sourceReceiver": "V9 | inset.lap_pair receiver",
       "connection": "inset.lap_pair",
       "webbingOwner": "Inset paired harness",
-      "webbingId": null,
+      "webbingId": "PART_inset_paired_harness",
       "nodeNames": [
         "buckle_v9_inset_lap_pair_receiver_receiver",
         "buckle_v9_inset_lap_pair_receiver_tongue",
         "buckle_v9_inset_lap_pair_receiver_button"
+      ],
+      "restTongueAxis": [
+        0.5348253,
+        -0.8232337,
+        0.1903892
       ],
       "threadedTab": true,
       "receiverConstruction": "One rounded molded shell with an actual cut tongue insertion mouth."
@@ -8384,15 +8986,25 @@
         1.0536772,
         0.3000078
       ],
+      "restTongueAnchor": [
+        -1.0614448,
+        1.0536772,
+        0.3000078
+      ],
       "initialLatched": true,
       "sourceReceiver": "V9 | inset.rear shoulder release",
       "connection": "inset.rear.shoulder_release",
       "webbingOwner": "Inset paired harness",
-      "webbingId": null,
+      "webbingId": "PART_inset_paired_harness",
       "nodeNames": [
         "buckle_v9_inset_rear_shoulder_release_receiver",
         "buckle_v9_inset_rear_shoulder_release_tongue",
         "buckle_v9_inset_rear_shoulder_release_button"
+      ],
+      "restTongueAxis": [
+        -0.1079665,
+        0.9941458,
+        0.0041685
       ],
       "threadedTab": true,
       "receiverConstruction": "One rounded molded shell with an actual cut tongue insertion mouth."
@@ -18749,11 +19361,17 @@
       ]
     }
   ],
+  "doorCorrection": {
+    "sourceObject": "Rear opening center meeting seal",
+    "movingLeaf": "PART_phys_rear_door_left",
+    "basis": "A narrow meeting overlap attached to the driver-side leaf; it vacates the open aperture."
+  },
   "notes": [
     "Browser appearance copy: static rest poses, simple kinematic interactions; no heavy native cloth/rigid simulation.",
     "All modeled receiver closures use a consistent rounded black/red case and persistent slotted metal tongue.",
     "Cable rest paths remain still until an endpoint is manipulated.",
     "Physics settings in historical offline sources are unchanged.",
+    "Every buckle links to separately exported soft webbing; fixed mounting lugs and rings remain on the cabin.",
     "Every steel tongue includes a short black webbing loop threaded around its crossbar; this persistent tab moves with the tongue."
   ],
   "supports": [
@@ -19153,8 +19771,9 @@
       "PART_phys_small_medication_bottle_screw_cap_003",
       "PART_phys_small_medication_bottle_screw_cap_004",
       "PART_phys_suction_canister_removable_lid"
-    ]
+    ],
+    "separateCubbyLid": "Mint upper-cubby lid remains independent when fetching the wipe canister below."
   },
-  "assetSha256": "53d90e858e2cfbba8c4a74b1ef84e36f862c81660d207ba6a520b7b70b46eb6d",
-  "assetBytes": 13465112
+  "assetSha256": "e28e168665a80a2e543319964f1251edc47dabd8df54440c080cef8ec9fde0f3",
+  "assetBytes": 15003388
 }
