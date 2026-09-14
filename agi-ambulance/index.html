@@ -92,10 +92,6 @@ video { width: 100%; height: 100%; display: block; object-fit: contain; backgrou
 .file-table a { text-decoration: none; }
 .file-table a:hover { text-decoration: underline; }
 .file-table .file-kind { text-align: right; font-size: 11px; color: #7b8289; width: 55px; padding-right: 0; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
-.task-table td:first-child { width:38%; white-space:normal; }.task-table .task-number { color:#7b8289; margin-right:9px; font-size:10px; }
-.research-note { grid-column:2; font-size:12px; color:var(--muted); line-height:1.7; margin-top:-18px; }
-.research-note p+p { margin-top:10px; }
-@media (max-width:800px) { .research-note { grid-column:1; margin-top:0; } }
 .method { grid-column: 2; color: var(--muted); font-size: 12px; line-height: 1.65; margin-top: -18px; }
 footer { margin-top: 32px; border-top: 1px solid var(--line); padding: 20px 0 28px; font-size: 11px; display: flex; justify-content: space-between; gap: 25px; color: #788087; }
 footer div { display: flex; gap: 24px; }
@@ -175,7 +171,7 @@ footer a { color: #59636c; text-decoration: none; }
 <div class="wrap">
 <header class="masthead">
   <div class="identity"><a href="https://github.com/WenzhouDing/AGI-Health">AGI-Health</a><span aria-hidden="true">/</span><a class="project-name" href="#main">Ambulance</a></div>
-  <nav aria-label="Project navigation"><a href="#training">Training</a><a class="files-nav" href="#blender">Blender files</a><a href="https://github.com/WenzhouDing/AGI-Health">Repository ↗</a></nav>
+  <nav aria-label="Project navigation"><a class="files-nav" href="#blender">Blender files</a><a href="https://github.com/WenzhouDing/AGI-Health">Repository ↗</a></nav>
 </header>
 <main id="main">
   <section class="intro" aria-labelledby="intro-title">
@@ -222,32 +218,6 @@ footer a { color: #59636c; text-decoration: none; }
     </figure>
     <p id="film-status" class="sr-only" role="status" aria-live="polite"></p>
     <noscript><p>The overview video works without JavaScript. Open the interactive demo to explore the scene.</p></noscript>
-  </section>
-  <section class="files-section" id="training" aria-labelledby="training-title">
-    <div class="files-intro"><h2 id="training-title">Ten equipment workflows</h2><p>Desktop and WebXR controllers share ordered tasks, placement targets and episode logs.</p><p>The shortlist is informed by US national paramedic education standards. It prioritizes what this cabin can support; it is not a frequency ranking or a validated clinical assessment.</p><a href="./play/?scenario=transport-ready">Start a scenario ↗</a></div>
-    <table class="file-table task-table"><caption class="sr-only">Ten trainee equipment exercises</caption><thead><tr><th scope="col">Exercise</th><th scope="col">Observable actions</th></tr></thead><tbody>
-      <tr><td><span class="task-number">01</span><a href="./play/?scenario=transport-ready">Transport readiness</a></td><td>Fasten cot restraints, restore cargo net and close rear doors.</td></tr>
-      <tr><td><span class="task-number">02</span><a href="./play/?scenario=assessment-setup">Assessment preparation</a></td><td>Stage the thermometer and power the monitor.</td></tr>
-      <tr><td><span class="task-number">03</span><a href="./play/?scenario=protected-supply">Protected supply retrieval</a></td><td>Release the cargo net, fetch the kit and restore the closure.</td></tr>
-      <tr><td><span class="task-number">04</span><a href="./play/?scenario=oxygen-setup">Oxygen equipment</a></td><td>Open storage and stage the packed mask and tubing.</td></tr>
-      <tr><td><span class="task-number">05</span><a href="./play/?scenario=suction-recovery">Suction assembly</a></td><td>Recover the disconnected, tethered canister lid and reconnect it.</td></tr>
-      <tr><td><span class="task-number">06</span><a href="./play/?scenario=ecg-setup">Monitor preparation</a></td><td>Release the ECG net, connect the lead and test controls.</td></tr>
-      <tr><td><span class="task-number">07</span><a href="./play/?scenario=resuscitation-prep">Resuscitation equipment</a></td><td>Prepare monitor controls and stage the requested kit.</td></tr>
-      <tr><td><span class="task-number">08</span><a href="./play/?scenario=bleeding-kit">Bleeding-control supplies</a></td><td>Carry the backpack, operate its pocket and stage the roll.</td></tr>
-      <tr><td><span class="task-number">09</span><a href="./play/?scenario=transfer-lines">Power connector transfer</a></td><td>Unplug, grasp, stage, return and reconnect the plug body.</td></tr>
-      <tr><td><span class="task-number">10</span><a href="./play/?scenario=handover-reset">Equipment handover</a></td><td>Use the handset, report supported facts and reset storage.</td></tr>
-    </tbody></table>
-    <div class="research-note"><p>These exercises assess equipment handling and sequence. Patient examination, gas delivery, ECG interpretation, resuscitation and treatment effectiveness are not simulated. Physical-headset validation remains pending.</p><p>Basis: <a href="https://www.ems.gov/assets/EMS_Education_Standards_2021_Updated2_24_25forEO.pdf">National EMS Education Standards</a>. <a href="https://github.com/WenzhouDing/AGI-Health/blob/main/docs/research/PARAMEDIC_TASK_EVIDENCE.md">Task rationale and clinical extension plan ↗</a></p></div>
-  </section>
-  <section class="files-section" id="robotics" aria-labelledby="robotics-title">
-    <div class="files-intro"><h2 id="robotics-title">Robot benchmark</h2><p>The same task evaluator, with seeded resets, bounded tool motion and a headless Gymnasium interface.</p><a href="./play/?mode=robot&amp;scenario=transfer-lines">Open robot benchmark ↗</a></div>
-    <table class="file-table task-table"><caption class="sr-only">Embodiment design choices</caption><thead><tr><th scope="col">Form factor</th><th scope="col">Research tradeoff</th></tr></thead><tbody>
-      <tr><td>Fixed arm</td><td>Recommended first physical backend: a bounded work cell for connectors, buttons and nearby supplies. Limited cabin coverage.</td></tr>
-      <tr><td>Ceiling rail arm</td><td>Next candidate for longitudinal reach while preserving floor space. Requires mounting, head-clearance and arm-sweep validation.</td></tr>
-      <tr><td>Mobile manipulator</td><td>Useful around doors and handoff stations; the reconstructed cot and bench leave a narrow aisle.</td></tr>
-      <tr><td>Humanoid</td><td>Broader human-tool compatibility, with substantially harder balance, body-clearance and two-hand control.</td></tr>
-    </tbody></table>
-    <div class="research-note"><p>The current browser and RL backend use kinematic proxies and simplified support contacts. There are no robot joints, force-controlled grasps or validated reachability results. A completed scripted rollout verifies the task interface, not a real robot.</p><p><a href="https://github.com/WenzhouDing/AGI-Health/tree/main/rl">Run the RL baseline ↗</a> · <a href="https://github.com/WenzhouDing/AGI-Health/blob/main/docs/research/ROBOT_EMBODIMENTS.md">Embodiment study and next physics backend ↗</a></p></div>
   </section>
   <section class="files-section" id="blender" aria-labelledby="blender-title">
     <div class="files-intro"><h2 id="blender-title">Blender scenes</h2><p>The cabin model and six editable interaction timelines.</p><a href="https://github.com/WenzhouDing/AGI-Health/tree/main/blender_demo">Files and setup ↗</a><span class="access-note">Repository access required</span></div>
