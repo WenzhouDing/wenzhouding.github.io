@@ -1,0 +1,486 @@
+{
+  "schema": 1,
+  "caseId": "bvm-001",
+  "title": "Assisted ventilation: recognition, paced support and seal recovery",
+  "duration": 77,
+  "fps": 24,
+  "sourceSha256": "5987a947e602ef4a80cc2859b4b132f47c94354b7bb2a34537b91b6d17982892",
+  "asset": "bvm-procedure.glb",
+  "clip": "BVM_Procedure",
+  "baselineHiddenNodes": [
+    "PART_cot_ankle_restraint_closed_buckle_and_folded_adjustment_tail",
+    "PART_cot_ankle_receiver_fixed_webbing",
+    "PART_cot_thigh_restraint_closed_buckle_and_loose_headward_adjustment_loop",
+    "PART_cot_thigh_receiver_fixed_webbing",
+    "PART_cot_waist_restraint_transverse_closure_and_loose_connector_branches",
+    "PART_cot_waist_receiver_fixed_webbing",
+    "PART_cot_waist_spare_tongue_branch",
+    "PART_cot_spare_receiver_fixed_webbing",
+    "buckle_cot_thigh_rolled_receiver_body_receiver",
+    "buckle_cot_thigh_rolled_receiver_body_button",
+    "buckle_cot_thigh_rolled_receiver_body_tongue",
+    "buckle_cot_waist_side_facing_primary_receiver_receiver",
+    "buckle_cot_waist_side_facing_primary_receiver_button",
+    "buckle_cot_waist_side_facing_primary_receiver_tongue",
+    "buckle_cot_waist_spare_red_button_receiver_on_loose_branch_receiver",
+    "buckle_cot_waist_spare_red_button_receiver_on_loose_branch_button",
+    "buckle_cot_waist_spare_red_button_receiver_on_loose_branch_tongue",
+    "buckle_cot_ankle_receiver",
+    "buckle_cot_ankle_button",
+    "buckle_cot_ankle_tongue",
+    "CABLE_monitor_patient_lead",
+    "CABLE_white_monitor_power_lead",
+    "PART_phys_ecg_monitor_patient_plug",
+    "PART_phys_treatment_monitor_mains_plug",
+    "PART_phys_cot_handheld_control",
+    "PART_phys_adapter_ac_inlet_plug"
+  ],
+  "baselineHiddenMaterials": [
+    {
+      "componentId": "STATIC_CABIN",
+      "materialName": "Cot | Light blue cotton sheet",
+      "reason": "Replace capture-time crumpled/draped sheet with an authored fitted mattress cover in the prepared clinical case."
+    }
+  ],
+  "steps": [
+    {
+      "id": "pre-use-inspection",
+      "start": 0,
+      "end": 5,
+      "title": "Before patient contact: inspect equipment",
+      "detail": "This separate readiness segment precedes the patient event. Full manufacturer preparation/function checks are assumed previously completed; the animation does not certify them.",
+      "focus": [
+        -0.86,
+        0.97,
+        -0.6
+      ],
+      "camera": {
+        "eye": [
+          -0.30999999999999994,
+          1.53,
+          -0.24
+        ],
+        "target": [
+          -0.86,
+          0.97,
+          -0.6
+        ]
+      },
+      "sourceIds": [
+        "ambu"
+      ],
+      "demonstration": {
+        "phase": "pre-patient"
+      }
+    },
+    {
+      "id": "pre-use-refill",
+      "start": 5,
+      "end": 12,
+      "title": "Demonstrate squeeze and refill",
+      "detail": "Visual inspection and unoccluded squeeze/refill are shown. Occluded-port pressure, pressure-limiting and reservoir tests require the device instructions and are outside this animation.",
+      "focus": [
+        -0.86,
+        0.97,
+        -0.6
+      ],
+      "camera": {
+        "eye": [
+          -0.30999999999999994,
+          1.53,
+          -0.24
+        ],
+        "target": [
+          -0.86,
+          0.97,
+          -0.6
+        ]
+      },
+      "sourceIds": [
+        "ambu"
+      ],
+      "demonstration": {
+        "phase": "pre-patient",
+        "pressureValidated": false
+      }
+    },
+    {
+      "id": "recognition",
+      "start": 12,
+      "end": 18,
+      "title": "Recognize inadequate breathing with a pulse",
+      "detail": "Assess responsiveness and breathing and establish a definite pulse promptly, spending no more than ten seconds on that check. This case follows assisted ventilation for an adult with a pulse; pulseless care is a separate pathway.",
+      "focus": [
+        0,
+        0.94,
+        -0.25
+      ],
+      "camera": {
+        "eye": [
+          0.55,
+          1.5,
+          0.10999999999999999
+        ],
+        "target": [
+          0,
+          0.94,
+          -0.25
+        ]
+      },
+      "sourceIds": [
+        "aha-bvm"
+      ],
+      "demonstration": {
+        "phase": "patient",
+        "pulse": "definite",
+        "breathing": "inadequate"
+      }
+    },
+    {
+      "id": "open-airway",
+      "start": 18,
+      "end": 19,
+      "title": "Open the nontraumatic airway",
+      "detail": "Demonstrate head tilt and chin lift for this nontraumatic adult case. The face and mask target follow the same authored head pose.",
+      "focus": [
+        0,
+        1.02,
+        -0.45
+      ],
+      "camera": {
+        "eye": [
+          0.55,
+          1.58,
+          -0.09000000000000002
+        ],
+        "target": [
+          0,
+          1.02,
+          -0.45
+        ]
+      },
+      "sourceIds": [
+        "aha-bvm"
+      ],
+      "demonstration": {
+        "airway": "opening"
+      }
+    },
+    {
+      "id": "place-mask",
+      "start": 19,
+      "end": 20,
+      "title": "Hold the mask and coordinate help",
+      "detail": "Establish the assisted mask position; the learner holds the seal and the available partner handles the bag.",
+      "focus": [
+        0,
+        1.02,
+        -0.45
+      ],
+      "camera": {
+        "eye": [
+          0.55,
+          1.58,
+          -0.09000000000000002
+        ],
+        "target": [
+          0,
+          1.02,
+          -0.45
+        ]
+      },
+      "sourceIds": [
+        "aha-bvm",
+        "ambu"
+      ],
+      "demonstration": {
+        "seal": "assisted"
+      }
+    },
+    {
+      "id": "first-breath",
+      "start": 20,
+      "end": 22,
+      "title": "Start assisted ventilation promptly",
+      "detail": "Give a breath over about one second and observe chest rise, fall and bag refill. Do not delay the first needed breath while arranging supplemental oxygen.",
+      "focus": [
+        0,
+        1.02,
+        -0.45
+      ],
+      "camera": {
+        "eye": [
+          0.55,
+          1.58,
+          -0.09000000000000002
+        ],
+        "target": [
+          0,
+          1.02,
+          -0.45
+        ]
+      },
+      "sourceIds": [
+        "aha-bvm",
+        "ambu"
+      ],
+      "demonstration": {
+        "breathStarts": [
+          20
+        ],
+        "oxygen": "not-yet-connected"
+      }
+    },
+    {
+      "id": "oxygen-ready",
+      "start": 22,
+      "end": 26,
+      "title": "Connect supplemental oxygen while supporting breathing",
+      "detail": "Bring the source-authored supply plug to the inlet and operate the supply control while support continues. Delivered concentration and flow are not simulated.",
+      "focus": [
+        -0.2,
+        1.03,
+        -0.43
+      ],
+      "camera": {
+        "eye": [
+          0.35000000000000003,
+          1.59,
+          -0.07
+        ],
+        "target": [
+          -0.2,
+          1.03,
+          -0.43
+        ]
+      },
+      "sourceIds": [
+        "aha-bvm",
+        "ambu"
+      ],
+      "demonstration": {
+        "oxygen": "connected"
+      }
+    },
+    {
+      "id": "paced-breaths",
+      "start": 26,
+      "end": 37,
+      "title": "Continue at six-second starts",
+      "detail": "Observe breaths starting six seconds apart, with visible chest movement and refill. The example count is a teaching segment, not a treatment endpoint.",
+      "focus": [
+        0,
+        1.02,
+        -0.45
+      ],
+      "camera": {
+        "eye": [
+          0.55,
+          1.58,
+          -0.09000000000000002
+        ],
+        "target": [
+          0,
+          1.02,
+          -0.45
+        ]
+      },
+      "sourceIds": [
+        "aha-bvm"
+      ],
+      "demonstration": {
+        "breathStarts": [
+          26,
+          32
+        ]
+      }
+    },
+    {
+      "id": "seal-failure",
+      "start": 37,
+      "end": 39,
+      "title": "Recognize loss of effectiveness",
+      "detail": "The mask shifts; the bag still compresses at 38 seconds but the authored chest response is absent. Inspect airway, seal and circuit.",
+      "focus": [
+        0,
+        1.02,
+        -0.45
+      ],
+      "camera": {
+        "eye": [
+          0.55,
+          1.58,
+          -0.09000000000000002
+        ],
+        "target": [
+          0,
+          1.02,
+          -0.45
+        ]
+      },
+      "sourceIds": [
+        "aha-bvm",
+        "ambu"
+      ],
+      "demonstration": {
+        "breathStarts": [
+          38
+        ],
+        "effective": false
+      }
+    },
+    {
+      "id": "reseat-mask",
+      "start": 39,
+      "end": 44,
+      "title": "Lift and reseat the mask",
+      "detail": "Maintain the open airway, visibly lift the mask and return it to its intended contact pose. Confirm recovery with the next chest response.",
+      "focus": [
+        0,
+        1.02,
+        -0.45
+      ],
+      "camera": {
+        "eye": [
+          0.55,
+          1.58,
+          -0.09000000000000002
+        ],
+        "target": [
+          0,
+          1.02,
+          -0.45
+        ]
+      },
+      "sourceIds": [
+        "aha-bvm",
+        "ambu"
+      ],
+      "demonstration": {
+        "seal": "correcting"
+      }
+    },
+    {
+      "id": "recovery-breaths",
+      "start": 44,
+      "end": 59,
+      "title": "Confirm effective paced recovery",
+      "detail": "Breaths resume at six-second starts with visible rise and fall. Three examples establish the demonstration segment; they are not a clinical stopping rule.",
+      "focus": [
+        0,
+        1.02,
+        -0.45
+      ],
+      "camera": {
+        "eye": [
+          0.55,
+          1.58,
+          -0.09000000000000002
+        ],
+        "target": [
+          0,
+          1.02,
+          -0.45
+        ]
+      },
+      "sourceIds": [
+        "aha-bvm"
+      ],
+      "demonstration": {
+        "breathStarts": [
+          44,
+          50,
+          56
+        ],
+        "effective": true
+      }
+    },
+    {
+      "id": "reassessment",
+      "start": 59,
+      "end": 65,
+      "title": "Reassess while support continues",
+      "detail": "Reassess breathing and pulse after correction and monitor for change. Continue assisted ventilation and the regular pulse check every two minutes; pulse loss changes the care pathway.",
+      "focus": [
+        0,
+        0.96,
+        -0.25
+      ],
+      "camera": {
+        "eye": [
+          0.55,
+          1.52,
+          0.10999999999999999
+        ],
+        "target": [
+          0,
+          0.96,
+          -0.25
+        ]
+      },
+      "sourceIds": [
+        "aha-bvm"
+      ],
+      "demonstration": {
+        "breathStarts": [
+          62
+        ],
+        "pulse": "definite"
+      }
+    },
+    {
+      "id": "ongoing-handover",
+      "start": 65,
+      "end": 77,
+      "title": "Handover with ongoing support",
+      "detail": "Report initial findings, failed chest response, mask correction and the continued need for assisted ventilation. Continue paced breaths through transfer of care.",
+      "focus": [
+        0,
+        1.02,
+        -0.45
+      ],
+      "camera": {
+        "eye": [
+          0.55,
+          1.58,
+          -0.09000000000000002
+        ],
+        "target": [
+          0,
+          1.02,
+          -0.45
+        ]
+      },
+      "sourceIds": [
+        "aha-bvm"
+      ],
+      "demonstration": {
+        "breathStarts": [
+          68,
+          74
+        ],
+        "support": "ongoing"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "aha-bvm",
+      "title": "American Heart Association2025 adult BLS healthcare-professional algorithm",
+      "url": "https://cpr.heart.org/-/media/CPR-Files/CPR-Guidelines-Files/2025-Algorithms/Algorithm-BLS-Adult-Healthcare-250701.pdf?sc_lang=en"
+    },
+    {
+      "id": "ambu",
+      "title": "Ambu SPUR II instructions for use, V13 2025/04 (manufacturer downloads)",
+      "url": "https://www.ambu.com/Admin/Public/DWSDownload.aspx?File=%2fFiles%2fFiles%2fDownloads%2fAmbu+com%2fAirwayManagement%2fResuscitator%2fSPUR+II+-+Disposable+Resuscitator%2fInstructions+for+use%2f492230040-IFU-SPUR-II-Resuscitator_Multi_V13_202504_TCC-11679_Online.pdf"
+    }
+  ],
+  "limits": [
+    "This nontraumatic adult-with-pulse example does not demonstrate the pulseless resuscitation pathway.",
+    "Complete manufacturer preparation and pressure/reservoir tests are assumed prior; only a visual inspection and unoccluded squeeze/refill subset is shown.",
+    "Mask alignment, chest movement, oxygen connection and partner gloves are scripted visual mechanisms; delivered gas, volume, seal pressure and physical skill are not validated.",
+    "A demonstration replay is not learner performance, a treatment endpoint or instructor/clinical validation."
+  ],
+  "inputSourceSha256": "c90bf11f230dd88b2d1816ef7d9de11bb853b660c6360d06c45acf1b9549d74e",
+  "inputSource": "blender_demo/ventilation_v1/source/Ambulance_Ventilation_v1.blend"
+}

@@ -7,15 +7,15 @@
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' fill='%23232629'/%3E%3Cpath d='M9 29 17 10h6l8 19h-6l-2-5h-7l-2 5zm9-10h3l-1.5-4z' fill='white'/%3E%3C/svg%3E">
     <meta name="description" content="Step inside an ambulance. Explore the reconstructed cabin, open its cabinets, and try the equipment in an interactive 3D experience." />
     <title>AGI-Ambulance · Interactive demo</title>
-    <script type="module" crossorigin src="./assets/index-VfryjdHZ.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-DKNJNDWW.css">
+    <script type="module" crossorigin src="./assets/index-BYz1M6yb.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-SV4XGivA.css">
   </head>
   <body>
     <div id="app">
       <div id="viewport" aria-label="Interactive 3D ambulance interior" tabindex="0"></div>
 
       <header class="topbar surface">
-        <a class="brand" href="https://wenzhouding.github.io/agi-ambulance/" aria-label="Back to the AGI-Ambulance project page">
+        <a class="brand" href="../" aria-label="Back to the AGI-Ambulance project page">
           <span class="brand-project">AGI-Health</span><span class="brand-separator" aria-hidden="true">/</span><strong>Ambulance</strong>
         </a>
         <div class="mode-switch" aria-label="Navigation mode">
@@ -36,6 +36,14 @@
         <button type="button" data-view="front" class="view-button" aria-pressed="false">Front</button>
         <button type="button" data-view="equipment" class="view-button" aria-pressed="false">Equipment</button>
         <button type="button" data-view="bench" class="view-button" aria-pressed="false">Bench</button>
+      </nav>
+
+      <nav class="research-strip surface" aria-label="Patient cases and exploration">
+        <select id="clinical-case-select" aria-label="Clinical case"><option value="ecg-001">Chest pain · ECG</option><option value="bvm-001">Inadequate breathing · BVM</option></select>
+        <button id="clinical-toggle" type="button" aria-controls="clinical-panel">Clinical case</button>
+        <button id="procedure-replay-toggle" type="button" aria-controls="procedure-replay-panel">Watch procedure</button>
+        <button id="exploration-toggle" type="button">Free exploration</button>
+        <div id="xr-entry"></div>
       </nav>
 
       <aside id="equipment-panel" class="equipment-panel surface" aria-labelledby="equipment-heading" hidden>
@@ -81,6 +89,7 @@
           <p>Explore the reconstructed cabin and interact with its doors, storage and medical equipment.</p>
           <button id="start-button" type="button" class="start-button">Start exploring <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></button>
           <span class="welcome-note">Drag to look around. Click an object to interact.</span>
+          <a id="welcome-home" class="welcome-home" href="../">Back to project page</a>
         </section>
       </div>
 

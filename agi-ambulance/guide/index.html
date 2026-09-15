@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Using the ambulance · AGI-Ambulance</title><style>
+:root{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:#24292d;background:#fff;font-synthesis:none;line-height:1.6}
+*{box-sizing:border-box}body{margin:0}a{color:#205ea7;text-underline-offset:3px}a:focus-visible{outline:2px solid #205ea7;outline-offset:4px}
+.wrap{max-width:1200px;width:calc(100% - 48px);margin:auto}header{display:flex;justify-content:space-between;align-items:center;gap:20px;min-height:64px;border-bottom:1px solid #dce0e3;font-size:13px}
+header a{color:#24292d;text-decoration:none}header nav{display:flex;gap:24px}.identity{display:flex;gap:12px;align-items:center}.identity span{color:#6e7781}
+main{max-width:800px;padding:36px 0 56px}h1{font-size:30px;line-height:1.2;margin:0 0 24px;letter-spacing:-.8px}h2{font-size:20px;line-height:1.35;margin:36px 0 12px}h3{font-size:16px;margin:28px 0 10px}
+p,li{font-size:15px;color:#47525c}p{margin:12px 0}ul,ol{padding-left:24px;margin:12px 0}li{margin:7px 0}strong{font-weight:600;color:#24292d}code{font-size:.92em;background:#f5f6f7;padding:1px 4px}
+footer{padding:18px 0 28px;border-top:1px solid #dce0e3;font-size:12px;color:#69727b;display:flex;justify-content:space-between;gap:20px}.skip{position:absolute;top:-100px}.skip:focus{top:8px;left:8px;background:white;padding:8px}
+@media(max-width:600px){.wrap{width:calc(100% - 32px)}header{align-items:flex-start;flex-wrap:wrap;padding:16px 0;gap:12px}header nav{gap:16px}main{padding-top:28px}h1{font-size:26px}footer{flex-wrap:wrap}}
+</style></head>
+<body><a class="skip" href="#main">Skip to content</a><div class="wrap">
+<header><div class="identity"><a href="../">AGI-Health</a><span>/</span><a href="../">Ambulance</a></div><nav aria-label="Guide navigation"><a href="index.html">Guide</a><a href="../#clinical">EMT practice</a><a href="../play/">Open simulator</a></nav></header>
+<main id="main"><h1 id="using-the-ambulance">Using the ambulance</h1>
+<p>Explore the reconstructed cabin, practice one of two patient cases, or watch its procedure demonstration. The browser scene is a lightweight version of Blender-authored equipment and mechanisms.</p>
+<p><a href="../play/">Open the simulator</a> · <a href="procedures.html">Procedure demonstrations</a> · <a href="curriculum.html">EMT curriculum and scope</a></p>
+<h2 id="desktop-controls">Desktop controls</h2>
+<ul>
+<li>Drag to look around; use <strong>WASD</strong> to walk.</li>
+<li>Click an object, or select it from <strong>Equipment</strong>, to see its actions.</li>
+<li><strong>E</strong> operates the selected control or the held item&#x27;s primary action.</li>
+<li><strong>G</strong> picks up or releases a movable item. The mouse wheel changes holding distance.</li>
+<li><strong>Return</strong> puts the selected item home. <strong>Reset</strong> restores the room.</li>
+</ul>
+<p>In free exploration, try the cabinet doors, buckles, nets, plugs, handset and bags. These interactions demonstrate equipment mechanisms; they do not earn clinical task credit. Carrying, gravity and deformation use simplified models, without comprehensive object collision or full fabric simulation.</p>
+<h2 id="patient-cases">Patient cases</h2>
+<p><a href="../play/?case=bvm-001">Assisted ventilation</a> concerns an adult with inadequate breathing and a pulse. Use the case panel for findings and partner coordination; the physical task includes airway and mask positioning, attempted breaths, correction and reassessment.</p>
+<p><a href="../play/?case=ecg-001">ECG acquisition</a> concerns a fictional adult with chest pressure. Use the case panel alongside preparation, electrode placement, lead connections, recording and contact correction. Acquiring a recording is separate from interpreting it.</p>
+<p>The simulator&#x27;s <strong>Clinical case</strong> selector changes cases. <strong>Watch procedure</strong> loads a demonstration; <strong>Free exploration</strong> leaves the case or replay. Case feedback describes the simulated evidence collected, not a clinical qualification.</p>
+<h2 id="webxr-controllers">WebXR controllers</h2>
+<p>Use a compatible immersive WebXR browser over HTTPS and select <strong>Enter XR</strong>. A headset must be available to the browser.</p>
+<ul>
+<li>Point and press <strong>trigger</strong> to select equipment, operate a control or activate an in-world panel button.</li>
+<li>Hold <strong>grip</strong> near a movable item, or while pointing at it, to carry it. Release grip to let go.</li>
+<li>Use the <strong>thumbstick</strong> for stepped movement and snap turns. Return it to neutral between steps.</li>
+<li><strong>Thumbstick click</strong> or the <strong>primary face button</strong> hides or restores the panel. Trigger away from equipment can reopen a hidden panel.</li>
+</ul>
+<p>The in-world panel provides case selection, instructions, actions and replay controls. Controllers are the supported input approach; physical-headset ergonomics and performance still need device testing. There is one held-object slot, and the app does not provide a physical room safety boundary.</p>
+<h2 id="source-and-blender">Source and Blender</h2>
+<p>The <a href="https://github.com/WenzhouDing/AGI-Health" target="_blank" rel="noopener noreferrer">project repository <span aria-hidden="true">↗</span></a> contains development documentation and information about the editable Blender sources. Repository access is required to view those materials. Browser playback does not require Blender.</p></main><footer><span>AGI-Health / Ambulance</span><a href="../">Project homepage</a></footer></div></body></html>

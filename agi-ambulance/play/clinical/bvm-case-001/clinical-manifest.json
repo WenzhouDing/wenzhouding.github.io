@@ -1,0 +1,605 @@
+{
+  "clinicalSchema": 2,
+  "caseId": "bvm-001",
+  "revision": "review_006",
+  "source": "Ambulance_Ventilation_v1.blend",
+  "units": "metres",
+  "components": [
+    {
+      "id": "TRAIN_BVM_PATIENT",
+      "label": "Adult ventilation trainer",
+      "kind": "patient",
+      "interactive": true,
+      "position": [
+        0.0,
+        0.800000011920929,
+        0.30000001192092896
+      ],
+      "nodeNames": [
+        "Trainer | continuous silicone anatomy",
+        "Trainer | embedded clavicle contour -1",
+        "Trainer | embedded clavicle contour 1",
+        "Trainer | finger crease -1 0",
+        "Trainer | finger crease -1 1",
+        "Trainer | finger crease -1 2",
+        "Trainer | finger crease 1 0",
+        "Trainer | finger crease 1 1",
+        "Trainer | finger crease 1 2",
+        "Trainer | modesty drape",
+        "Trainer | sternum seam"
+      ],
+      "bounds": {
+        "min": [
+          -0.2846713662147522,
+          0.7571454644203186,
+          -0.6183331608772278
+        ],
+        "max": [
+          0.28466758131980896,
+          1.0033800601959229,
+          1.302435040473938
+        ]
+      }
+    },
+    {
+      "id": "TRAIN_BVM_LINEN",
+      "label": "Prepared cot linen",
+      "kind": "surface",
+      "interactive": false,
+      "position": [
+        -0.009999999776482582,
+        0.7434999942779541,
+        0.33500000834465027
+      ],
+      "nodeNames": [
+        "Linen | compressed head support",
+        "Linen | fitted elastic hem",
+        "Linen | fitted mattress cover"
+      ],
+      "bounds": {
+        "min": [
+          -0.28999999165534973,
+          0.7149999737739563,
+          -0.6649999618530273
+        ],
+        "max": [
+          0.27000001072883606,
+          0.8134015202522278,
+          1.3350000381469727
+        ]
+      }
+    },
+    {
+      "id": "TRAIN_BVM_HEAD",
+      "label": "Head tilt and chin lift",
+      "kind": "articulation",
+      "interactive": true,
+      "position": [
+        0.0,
+        0.8659999966621399,
+        -0.3499999940395355
+      ],
+      "nodeNames": [
+        "Trainer | ear -1",
+        "Trainer | ear 1",
+        "Trainer | eyebrow -1",
+        "Trainer | eyebrow 1",
+        "Trainer | eyelid -1",
+        "Trainer | eyelid 1",
+        "Trainer | mouth",
+        "Trainer | nose"
+      ],
+      "bounds": {
+        "min": [
+          -0.0989999994635582,
+          0.8729999661445618,
+          -0.5316353440284729
+        ],
+        "max": [
+          0.0989999994635582,
+          1.034000039100647,
+          -0.4187331199645996
+        ]
+      }
+    },
+    {
+      "id": "TRAIN_BVM_MASK",
+      "label": "Adult face mask",
+      "kind": "mask",
+      "interactive": true,
+      "position": [
+        -0.8600000143051147,
+        0.8964828252792358,
+        -0.4300000071525574
+      ],
+      "nodeNames": [
+        "Mask | 22 mm port",
+        "Mask | continuous inflated face seal",
+        "Mask | transparent dome"
+      ],
+      "bounds": {
+        "min": [
+          -0.9010000228881836,
+          0.8553000092506409,
+          -0.4795285165309906
+        ],
+        "max": [
+          -0.8010000586509705,
+          0.9719828367233276,
+          -0.38047143816947937
+        ]
+      }
+    },
+    {
+      "id": "TRAIN_BVM_BAG",
+      "label": "Self-inflating ventilation bag",
+      "kind": "bag",
+      "interactive": true,
+      "position": [
+        -0.8600000143051147,
+        0.9784828424453735,
+        -0.5999999642372131
+      ],
+      "nodeNames": [
+        "Bag | compression shell",
+        "Bag | end collar -1",
+        "Bag | end collar 1"
+      ],
+      "bounds": {
+        "min": [
+          -0.9200000166893005,
+          0.9184828400611877,
+          -0.7140000462532043
+        ],
+        "max": [
+          -0.800000011920929,
+          1.0384827852249146,
+          -0.4859999418258667
+        ]
+      }
+    },
+    {
+      "id": "TRAIN_BVM_VALVE",
+      "label": "Patient valve connection",
+      "kind": "connector",
+      "interactive": true,
+      "position": [
+        -0.8600000143051147,
+        0.977482795715332,
+        -0.44300001859664917
+      ],
+      "nodeNames": [
+        "Valve | elbow airway",
+        "Valve | expiratory outlet"
+      ],
+      "bounds": {
+        "min": [
+          -0.8924999833106995,
+          0.9574828743934631,
+          -0.48399999737739563
+        ],
+        "max": [
+          -0.847000002861023,
+          0.9914828538894653,
+          -0.4169999659061432
+        ]
+      }
+    },
+    {
+      "id": "TRAIN_BVM_RESERVOIR",
+      "label": "Attached oxygen reservoir",
+      "kind": "fixture",
+      "interactive": false,
+      "position": [
+        -0.8600000143051147,
+        0.9784828424453735,
+        -0.800000011920929
+      ],
+      "nodeNames": [
+        "Reservoir | attached inlet",
+        "Reservoir | soft bag"
+      ],
+      "bounds": {
+        "min": [
+          -0.9070000052452087,
+          0.9564828276634216,
+          -0.8999999165534973
+        ],
+        "max": [
+          -0.8130000233650208,
+          1.0004827976226807,
+          -0.7049999833106995
+        ]
+      }
+    },
+    {
+      "id": "TRAIN_BVM_PARTNER",
+      "label": "Scripted partner bag hand",
+      "kind": "fixture",
+      "interactive": false,
+      "position": [
+        -0.8600000143051147,
+        0.9784828424453735,
+        -0.5999999642372131
+      ],
+      "nodeNames": [
+        "Partner | gloved finger 0",
+        "Partner | gloved finger 1",
+        "Partner | gloved finger 2",
+        "Partner | gloved finger 3",
+        "Partner | gloved palm"
+      ],
+      "bounds": {
+        "min": [
+          -0.9179999828338623,
+          1.0094828605651855,
+          -0.6469998955726624
+        ],
+        "max": [
+          -0.7919999361038208,
+          1.0534828901290894,
+          -0.5529999732971191
+        ]
+      }
+    },
+    {
+      "id": "TRAIN_BVM_HOLDER",
+      "label": "Learner mask hand teaching overlay",
+      "kind": "fixture",
+      "interactive": false,
+      "position": [
+        -0.8600000143051147,
+        0.8964828252792358,
+        -0.4300000071525574
+      ],
+      "nodeNames": [
+        "Holder | index finger",
+        "Holder | thumb"
+      ],
+      "bounds": {
+        "min": [
+          -0.8960000276565552,
+          0.9194828271865845,
+          -0.4790000021457672
+        ],
+        "max": [
+          -0.8140000104904175,
+          0.9554828405380249,
+          -0.3880000114440918
+        ]
+      }
+    },
+    {
+      "id": "TRAIN_BVM_OXYGEN_PLUG",
+      "label": "Oxygen supply connector",
+      "kind": "plug",
+      "interactive": true,
+      "position": [
+        -0.8830000162124634,
+        0.9564828276634216,
+        -0.7159999012947083
+      ],
+      "nodeNames": [
+        "Oxygen | detachable inlet"
+      ],
+      "bounds": {
+        "min": [
+          -0.8960000276565552,
+          0.9514828324317932,
+          -0.7209998965263367
+        ],
+        "max": [
+          -0.8700000047683716,
+          0.96148282289505,
+          -0.7109999060630798
+        ]
+      }
+    },
+    {
+      "id": "TRAIN_BVM_OXYGEN_CONTROL",
+      "label": "Training oxygen supply valve",
+      "kind": "button",
+      "interactive": true,
+      "position": [
+        -1.1100000143051147,
+        1.0399999618530273,
+        -1.0299999713897705
+      ],
+      "nodeNames": [
+        "Oxygen | source label",
+        "Oxygen | supply dial"
+      ],
+      "bounds": {
+        "min": [
+          -1.121999979019165,
+          1.0169999599456787,
+          -1.0529999732971191
+        ],
+        "max": [
+          -1.0913690328598022,
+          1.073099970817566,
+          -1.0069999694824219
+        ]
+      }
+    },
+    {
+      "id": "TRAIN_BVM_OXYGEN_TUBE",
+      "label": "Connected oxygen supply line",
+      "kind": "cable",
+      "interactive": false,
+      "position": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "nodeNames": [
+        "Oxygen | flexible supply tubing"
+      ],
+      "bounds": {
+        "min": [
+          -1.1041951179504395,
+          0.8829208612442017,
+          -1.031231164932251
+        ],
+        "max": [
+          -0.8808059692382812,
+          1.0417248010635376,
+          -0.7151430249214172
+        ]
+      }
+    },
+    {
+      "id": "TRAIN_BVM_TRAY",
+      "label": "Ventilation equipment tray",
+      "kind": "surface",
+      "interactive": false,
+      "position": [
+        -0.9399999976158142,
+        0.8500000238418579,
+        -0.5299999713897705
+      ],
+      "nodeNames": [
+        "Tray | low rim base",
+        "Tray | training label"
+      ],
+      "bounds": {
+        "min": [
+          -1.1449999809265137,
+          0.8450000286102295,
+          -0.7149999737739563
+        ],
+        "max": [
+          -0.7350000143051147,
+          0.8571000099182129,
+          -0.3449999690055847
+        ]
+      }
+    }
+  ],
+  "baselineHiddenNodes": [
+    "PART_cot_ankle_restraint_closed_buckle_and_folded_adjustment_tail",
+    "PART_cot_ankle_receiver_fixed_webbing",
+    "PART_cot_thigh_restraint_closed_buckle_and_loose_headward_adjustment_loop",
+    "PART_cot_thigh_receiver_fixed_webbing",
+    "PART_cot_waist_restraint_transverse_closure_and_loose_connector_branches",
+    "PART_cot_waist_receiver_fixed_webbing",
+    "PART_cot_waist_spare_tongue_branch",
+    "PART_cot_spare_receiver_fixed_webbing",
+    "buckle_cot_thigh_rolled_receiver_body_receiver",
+    "buckle_cot_thigh_rolled_receiver_body_button",
+    "buckle_cot_thigh_rolled_receiver_body_tongue",
+    "buckle_cot_waist_side_facing_primary_receiver_receiver",
+    "buckle_cot_waist_side_facing_primary_receiver_button",
+    "buckle_cot_waist_side_facing_primary_receiver_tongue",
+    "buckle_cot_waist_spare_red_button_receiver_on_loose_branch_receiver",
+    "buckle_cot_waist_spare_red_button_receiver_on_loose_branch_button",
+    "buckle_cot_waist_spare_red_button_receiver_on_loose_branch_tongue",
+    "buckle_cot_ankle_receiver",
+    "buckle_cot_ankle_button",
+    "buckle_cot_ankle_tongue",
+    "CABLE_monitor_patient_lead",
+    "CABLE_white_monitor_power_lead",
+    "PART_phys_ecg_monitor_patient_plug",
+    "PART_phys_treatment_monitor_mains_plug",
+    "PART_phys_cot_handheld_control",
+    "PART_phys_adapter_ac_inlet_plug"
+  ],
+  "baselineHiddenMaterials": [
+    {
+      "componentId": "STATIC_CABIN",
+      "materialName": "Cot | Light blue cotton sheet",
+      "reason": "Replace capture-time crumpled/draped sheet with an authored fitted mattress cover in the prepared clinical case."
+    }
+  ],
+  "supports": [
+    {
+      "id": "BVM_LINEN_SUPPORT",
+      "ownerId": "TRAIN_BVM_LINEN",
+      "min": [
+        -0.268,
+        0.716,
+        -0.643
+      ],
+      "max": [
+        0.248,
+        0.772,
+        1.313
+      ]
+    },
+    {
+      "id": "BVM_WORKTOP_SUPPORT",
+      "ownerId": "STATIC_CABIN",
+      "min": [
+        -1.17,
+        0.83,
+        -1.31
+      ],
+      "max": [
+        -0.695,
+        0.845,
+        -0.29
+      ]
+    },
+    {
+      "id": "BVM_TRAY_SUPPORT",
+      "ownerId": "TRAIN_BVM_TRAY",
+      "min": [
+        -1.145,
+        0.845,
+        -0.715
+      ],
+      "max": [
+        -0.735,
+        0.855,
+        -0.345
+      ]
+    }
+  ],
+  "mechanisms": {
+    "head": {
+      "id": "TRAIN_BVM_HEAD",
+      "pivot": [
+        0.0,
+        0.8659999966621399,
+        -0.3499999940395355
+      ],
+      "angle": 0.29670597283903605,
+      "bodyNode": "Trainer | continuous silicone anatomy",
+      "airwayMorph": "Airway open",
+      "chestMorph": "Chest rise"
+    },
+    "face": {
+      "closed": [
+        0.0,
+        1.0069999694824219,
+        -0.4490000009536743
+      ],
+      "open": [
+        0.0,
+        1.0297837257385254,
+        -0.40344977378845215
+      ],
+      "normalClosed": [
+        0,
+        1,
+        0
+      ],
+      "normalOpen": [
+        0.0,
+        0.9563047885894775,
+        0.2923716902732849
+      ],
+      "contactRadius": 0.026,
+      "leakOffset": [
+        0.042,
+        0.035,
+        0
+      ]
+    },
+    "bag": {
+      "id": "TRAIN_BVM_BAG",
+      "node": "Bag | compression shell",
+      "morph": "Squeeze",
+      "duration": 1,
+      "refillSeconds": 0.75
+    },
+    "assembly": {
+      "root": "TRAIN_BVM_MASK",
+      "followers": [
+        "TRAIN_BVM_BAG",
+        "TRAIN_BVM_VALVE",
+        "TRAIN_BVM_RESERVOIR",
+        "TRAIN_BVM_PARTNER",
+        "TRAIN_BVM_HOLDER",
+        "TRAIN_BVM_OXYGEN_PLUG"
+      ],
+      "disconnectOffset": [
+        -0.06,
+        0,
+        0
+      ]
+    },
+    "oxygen": {
+      "mesh": "Oxygen | flexible supply tubing",
+      "parameter": "_line_t",
+      "start": [
+        -1.100000023841858,
+        1.0399999618530273,
+        -1.0299999713897705
+      ],
+      "end": [
+        -1.1459999084472656,
+        0.9564828276634216,
+        -0.40700000524520874
+      ],
+      "restEndpoint": [
+        -1.1459999084472656,
+        0.9564828276634216,
+        -0.40700000524520874
+      ],
+      "desiredPlugRest": [
+        -0.8830000162124634,
+        0.9564828276634216,
+        -0.7159999012947083
+      ],
+      "endpointMorphs": [
+        "Oxygen endpoint X",
+        "Oxygen endpoint Y",
+        "Oxygen endpoint Z"
+      ],
+      "endpointMorphUnits": "metres along world Y-up X/Y/Z; weights = desired endpoint minus restEndpoint",
+      "disconnectOffset": [
+        0,
+        0,
+        0.035
+      ]
+    }
+  },
+  "cameras": {
+    "patient": {
+      "eye": [
+        0.46,
+        1.55,
+        -0.04
+      ],
+      "target": [
+        0,
+        0.94,
+        -0.37
+      ]
+    },
+    "supplies": {
+      "eye": [
+        -0.3,
+        1.37,
+        -0.07
+      ],
+      "target": [
+        -0.93,
+        0.92,
+        -0.47
+      ]
+    },
+    "airway": {
+      "eye": [
+        0.4,
+        1.42,
+        -0.51
+      ],
+      "target": [
+        0,
+        0.99,
+        -0.46
+      ]
+    }
+  },
+  "references": [
+    "https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/adult-basic-life-support",
+    "https://www.ambu.com/emergency-care-and-training/resuscitators/product/ambu-spur-ii"
+  ],
+  "limits": [
+    "Generic visual teaching circuit; no certified manufacturer replica or pressure/volume/oxygen-delivery solver.",
+    "Head and chest poses, bag compression and partner hand are source-authored kinematics.",
+    "Controller mask pose is an assisted seal model, not physical mask force or bimanual clinical proficiency."
+  ]
+}

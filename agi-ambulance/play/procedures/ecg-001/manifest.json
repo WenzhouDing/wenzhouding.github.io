@@ -1,0 +1,701 @@
+{
+  "schema": 1,
+  "caseId": "ecg-001",
+  "title": "12-lead ECG: acquisition, contact repair and reassessment",
+  "duration": 98,
+  "fps": 24,
+  "sourceSha256": "a0dddd44e7dea056655d53201b2ec1211b5ababfbdba0b82a1fae7e195220900",
+  "asset": "ecg-procedure.glb",
+  "clip": "ECG_Procedure",
+  "baselineHiddenNodes": [
+    "PART_cot_ankle_restraint_closed_buckle_and_folded_adjustment_tail",
+    "PART_cot_ankle_receiver_fixed_webbing",
+    "PART_cot_thigh_restraint_closed_buckle_and_loose_headward_adjustment_loop",
+    "PART_cot_thigh_receiver_fixed_webbing",
+    "PART_cot_waist_restraint_transverse_closure_and_loose_connector_branches",
+    "PART_cot_waist_receiver_fixed_webbing",
+    "PART_cot_waist_spare_tongue_branch",
+    "PART_cot_spare_receiver_fixed_webbing",
+    "buckle_cot_thigh_rolled_receiver_body_receiver",
+    "buckle_cot_thigh_rolled_receiver_body_button",
+    "buckle_cot_thigh_rolled_receiver_body_tongue",
+    "buckle_cot_waist_side_facing_primary_receiver_receiver",
+    "buckle_cot_waist_side_facing_primary_receiver_button",
+    "buckle_cot_waist_side_facing_primary_receiver_tongue",
+    "buckle_cot_waist_spare_red_button_receiver_on_loose_branch_receiver",
+    "buckle_cot_waist_spare_red_button_receiver_on_loose_branch_button",
+    "buckle_cot_waist_spare_red_button_receiver_on_loose_branch_tongue",
+    "buckle_cot_ankle_receiver",
+    "buckle_cot_ankle_button",
+    "buckle_cot_ankle_tongue",
+    "CABLE_monitor_patient_lead",
+    "CABLE_white_monitor_power_lead",
+    "PART_phys_ecg_monitor_patient_plug",
+    "PART_phys_treatment_monitor_mains_plug",
+    "PART_phys_cot_handheld_control",
+    "PART_phys_adapter_ac_inlet_plug"
+  ],
+  "baselineHiddenMaterials": [
+    {
+      "componentId": "STATIC_CABIN",
+      "materialName": "Cot | Light blue cotton sheet",
+      "reason": "Replace capture-time crumpled/draped sheet with an authored fitted mattress cover in the prepared clinical case."
+    }
+  ],
+  "steps": [
+    {
+      "id": "context",
+      "start": 0,
+      "end": 6,
+      "title": "Explain and prepare",
+      "detail": "Confirm the preset fictional identity and chest-pain assessment plan, explain the recording and preserve privacy. Case cards are not performed vital-sign measurements.",
+      "focus": [
+        0,
+        0.97,
+        -0.05
+      ],
+      "camera": {
+        "eye": [
+          0.55,
+          1.53,
+          0.31
+        ],
+        "target": [
+          0,
+          0.97,
+          -0.05
+        ]
+      },
+      "sourceIds": [
+        "philips",
+        "ri-ecg"
+      ],
+      "demonstration": {
+        "mode": "clinical-context"
+      }
+    },
+    {
+      "id": "skin-preparation",
+      "start": 6,
+      "end": 16,
+      "title": "Prepare clean, dry sites",
+      "detail": "Representative dry-gauze preparation is shown. Follow the device instructions and patient-specific preparation needs; this is not a complete skin-preparation skills assessment.",
+      "focus": [
+        0,
+        0.96,
+        -0.05
+      ],
+      "camera": {
+        "eye": [
+          0.55,
+          1.52,
+          0.31
+        ],
+        "target": [
+          0,
+          0.96,
+          -0.05
+        ]
+      },
+      "sourceIds": [
+        "philips"
+      ],
+      "demonstration": {
+        "components": [
+          "REPLAY_ECG_DRY_GAUZE"
+        ]
+      }
+    },
+    {
+      "id": "place-ra",
+      "start": 16,
+      "end": 20,
+      "title": "Place RA",
+      "detail": "Right forearm, distal to shoulder. One illustrative order is shown; independent limb placements may occur in a different order.",
+      "focus": [
+        -0.2479708343744278,
+        0.8351149559020996,
+        0.28031057119369507
+      ],
+      "camera": {
+        "eye": [
+          0.30202916562557225,
+          1.3951149559020997,
+          0.640310571193695
+        ],
+        "target": [
+          -0.2479708343744278,
+          0.8351149559020996,
+          0.28031057119369507
+        ]
+      },
+      "sourceIds": [
+        "philips",
+        "ri-ecg"
+      ],
+      "demonstration": {
+        "components": [
+          "TRAIN_ECG_ELECTRODE_RA"
+        ]
+      }
+    },
+    {
+      "id": "place-la",
+      "start": 20,
+      "end": 24,
+      "title": "Place LA",
+      "detail": "Left forearm, distal to shoulder. One illustrative order is shown; independent limb placements may occur in a different order.",
+      "focus": [
+        0.2479752153158188,
+        0.8351028561592102,
+        0.28032177686691284
+      ],
+      "camera": {
+        "eye": [
+          0.7979752153158188,
+          1.3951028561592103,
+          0.6403217768669128
+        ],
+        "target": [
+          0.2479752153158188,
+          0.8351028561592102,
+          0.28032177686691284
+        ]
+      },
+      "sourceIds": [
+        "philips",
+        "ri-ecg"
+      ],
+      "demonstration": {
+        "components": [
+          "TRAIN_ECG_ELECTRODE_LA"
+        ]
+      }
+    },
+    {
+      "id": "place-rl",
+      "start": 24,
+      "end": 28,
+      "title": "Place RL",
+      "detail": "Right lower leg, distal to hip. One illustrative order is shown; independent limb placements may occur in a different order.",
+      "focus": [
+        -0.08910299092531204,
+        0.8487508893013,
+        1.0553250312805176
+      ],
+      "camera": {
+        "eye": [
+          0.460897009074688,
+          1.4087508893013,
+          1.4153250312805175
+        ],
+        "target": [
+          -0.08910299092531204,
+          0.8487508893013,
+          1.0553250312805176
+        ]
+      },
+      "sourceIds": [
+        "philips",
+        "ri-ecg"
+      ],
+      "demonstration": {
+        "components": [
+          "TRAIN_ECG_ELECTRODE_RL"
+        ]
+      }
+    },
+    {
+      "id": "place-ll",
+      "start": 28,
+      "end": 32,
+      "title": "Place LL",
+      "detail": "Left lower leg, distal to hip. One illustrative order is shown; independent limb placements may occur in a different order.",
+      "focus": [
+        0.0890972763299942,
+        0.8487480282783508,
+        1.0553258657455444
+      ],
+      "camera": {
+        "eye": [
+          0.6390972763299942,
+          1.4087480282783509,
+          1.4153258657455443
+        ],
+        "target": [
+          0.0890972763299942,
+          0.8487480282783508,
+          1.0553258657455444
+        ]
+      },
+      "sourceIds": [
+        "philips",
+        "ri-ecg"
+      ],
+      "demonstration": {
+        "components": [
+          "TRAIN_ECG_ELECTRODE_LL"
+        ]
+      }
+    },
+    {
+      "id": "place-v1",
+      "start": 32,
+      "end": 36,
+      "title": "Place V1",
+      "detail": "Fourth intercostal space, right sternal border. One illustrative order is shown; independent limb placements may occur in a different order.",
+      "focus": [
+        -0.03083360753953457,
+        0.9878476858139038,
+        -0.07895717769861221
+      ],
+      "camera": {
+        "eye": [
+          0.5191663924604655,
+          1.5478476858139039,
+          0.2810428223013878
+        ],
+        "target": [
+          -0.03083360753953457,
+          0.9878476858139038,
+          -0.07895717769861221
+        ]
+      },
+      "sourceIds": [
+        "philips",
+        "ri-ecg"
+      ],
+      "demonstration": {
+        "components": [
+          "TRAIN_ECG_ELECTRODE_V1"
+        ]
+      }
+    },
+    {
+      "id": "place-v2",
+      "start": 36,
+      "end": 40,
+      "title": "Place V2",
+      "detail": "Fourth intercostal space, left sternal border. One illustrative order is shown; independent limb placements may occur in a different order.",
+      "focus": [
+        0.030827822163701057,
+        0.9878446459770203,
+        -0.07895863056182861
+      ],
+      "camera": {
+        "eye": [
+          0.5808278221637011,
+          1.5478446459770203,
+          0.2810413694381714
+        ],
+        "target": [
+          0.030827822163701057,
+          0.9878446459770203,
+          -0.07895863056182861
+        ]
+      },
+      "sourceIds": [
+        "philips",
+        "ri-ecg"
+      ],
+      "demonstration": {
+        "components": [
+          "TRAIN_ECG_ELECTRODE_V2"
+        ]
+      }
+    },
+    {
+      "id": "place-v4",
+      "start": 40,
+      "end": 44,
+      "title": "Place V4",
+      "detail": "Fifth intercostal space, left midclavicular line. One illustrative order is shown; independent limb placements may occur in a different order.",
+      "focus": [
+        0.08189470320940018,
+        0.9721512198448181,
+        0.005222622770816088
+      ],
+      "camera": {
+        "eye": [
+          0.6318947032094002,
+          1.5321512198448182,
+          0.3652226227708161
+        ],
+        "target": [
+          0.08189470320940018,
+          0.9721512198448181,
+          0.005222622770816088
+        ]
+      },
+      "sourceIds": [
+        "philips",
+        "ri-ecg"
+      ],
+      "demonstration": {
+        "components": [
+          "TRAIN_ECG_ELECTRODE_V4"
+        ]
+      }
+    },
+    {
+      "id": "place-v3",
+      "start": 44,
+      "end": 48,
+      "title": "Place V3",
+      "detail": "Midway between V2 and V4. One illustrative order is shown; independent limb placements may occur in a different order.",
+      "focus": [
+        0.05683085322380066,
+        0.9826163053512573,
+        -0.036886245012283325
+      ],
+      "camera": {
+        "eye": [
+          0.6068308532238007,
+          1.5426163053512574,
+          0.32311375498771666
+        ],
+        "target": [
+          0.05683085322380066,
+          0.9826163053512573,
+          -0.036886245012283325
+        ]
+      },
+      "sourceIds": [
+        "philips",
+        "ri-ecg"
+      ],
+      "demonstration": {
+        "components": [
+          "TRAIN_ECG_ELECTRODE_V3"
+        ]
+      }
+    },
+    {
+      "id": "place-v5",
+      "start": 48,
+      "end": 52,
+      "title": "Place V5",
+      "detail": "Left anterior axillary line, horizontal level of V4. One illustrative order is shown; independent limb placements may occur in a different order.",
+      "focus": [
+        0.1427820771932602,
+        0.9368891716003418,
+        0.005262567661702633
+      ],
+      "camera": {
+        "eye": [
+          0.6927820771932602,
+          1.4968891716003419,
+          0.3652625676617026
+        ],
+        "target": [
+          0.1427820771932602,
+          0.9368891716003418,
+          0.005262567661702633
+        ]
+      },
+      "sourceIds": [
+        "philips",
+        "ri-ecg"
+      ],
+      "demonstration": {
+        "components": [
+          "TRAIN_ECG_ELECTRODE_V5"
+        ]
+      }
+    },
+    {
+      "id": "place-v6",
+      "start": 52,
+      "end": 56,
+      "title": "Place V6",
+      "detail": "Left midaxillary line, horizontal level of V4. One illustrative order is shown; independent limb placements may occur in a different order.",
+      "focus": [
+        0.17101329565048218,
+        0.8882068395614624,
+        0.00523736048489809
+      ],
+      "camera": {
+        "eye": [
+          0.7210132956504822,
+          1.4482068395614625,
+          0.3652373604848981
+        ],
+        "target": [
+          0.17101329565048218,
+          0.8882068395614624,
+          0.00523736048489809
+        ]
+      },
+      "sourceIds": [
+        "philips",
+        "ri-ecg"
+      ],
+      "demonstration": {
+        "components": [
+          "TRAIN_ECG_ELECTRODE_V6"
+        ]
+      }
+    },
+    {
+      "id": "power-stillness",
+      "start": 56,
+      "end": 61,
+      "title": "Prepare to acquire",
+      "detail": "Power the device, check attachment and ask the patient to remain still for recording.",
+      "focus": [
+        -0.75,
+        0.98,
+        -1.01
+      ],
+      "camera": {
+        "eye": [
+          -0.19999999999999996,
+          1.54,
+          -0.65
+        ],
+        "target": [
+          -0.75,
+          0.98,
+          -1.01
+        ]
+      },
+      "sourceIds": [
+        "philips"
+      ],
+      "demonstration": {
+        "recordStatus": "setup"
+      }
+    },
+    {
+      "id": "contact-fault",
+      "start": 61,
+      "end": 64,
+      "title": "Recognize a contact problem",
+      "detail": "The first acquisition reports an authored V2 contact problem. Inspect the actual electrode before relying on the record.",
+      "focus": [
+        0.031,
+        0.99,
+        -0.079
+      ],
+      "camera": {
+        "eye": [
+          0.5810000000000001,
+          1.55,
+          0.28099999999999997
+        ],
+        "target": [
+          0.031,
+          0.99,
+          -0.079
+        ]
+      },
+      "sourceIds": [
+        "philips"
+      ],
+      "demonstration": {
+        "recordStatus": "contact-fault"
+      }
+    },
+    {
+      "id": "lift-v2",
+      "start": 64,
+      "end": 69,
+      "title": "Remove the faulty contact",
+      "detail": "Lift V2 while its lead remains attached. Inspect and correct the contact interface.",
+      "focus": [
+        0.031,
+        0.99,
+        -0.079
+      ],
+      "camera": {
+        "eye": [
+          0.5810000000000001,
+          1.55,
+          0.28099999999999997
+        ],
+        "target": [
+          0.031,
+          0.99,
+          -0.079
+        ]
+      },
+      "sourceIds": [
+        "philips"
+      ],
+      "demonstration": {
+        "contact": "removed"
+      }
+    },
+    {
+      "id": "reapply-v2",
+      "start": 69,
+      "end": 74,
+      "title": "Reapply V2",
+      "detail": "Return V2 to the same correct fourth-intercostal parasternal site and confirm contact. Failed adhesive or equipment would require replacement; this is an authored contact fault.",
+      "focus": [
+        0.031,
+        0.99,
+        -0.079
+      ],
+      "camera": {
+        "eye": [
+          0.5810000000000001,
+          1.55,
+          0.28099999999999997
+        ],
+        "target": [
+          0.031,
+          0.99,
+          -0.079
+        ]
+      },
+      "sourceIds": [
+        "philips"
+      ],
+      "demonstration": {
+        "contact": "restored"
+      }
+    },
+    {
+      "id": "valid-recording",
+      "start": 74,
+      "end": 78,
+      "title": "Acquire a usable recording",
+      "detail": "Repeat acquisition after correction and review the simulated recording. A device being powered is not a patient measurement.",
+      "focus": [
+        -0.75,
+        0.98,
+        -1.01
+      ],
+      "camera": {
+        "eye": [
+          -0.19999999999999996,
+          1.54,
+          -0.65
+        ],
+        "target": [
+          -0.75,
+          0.98,
+          -1.01
+        ]
+      },
+      "sourceIds": [
+        "philips",
+        "ri-ecg"
+      ],
+      "demonstration": {
+        "recordStatus": "usable"
+      }
+    },
+    {
+      "id": "reassess",
+      "start": 78,
+      "end": 86,
+      "title": "Reassess the patient",
+      "detail": "Reassess symptoms and the case findings; the recording does not replace clinical reassessment.",
+      "focus": [
+        0,
+        0.97,
+        -0.25
+      ],
+      "camera": {
+        "eye": [
+          0.55,
+          1.53,
+          0.10999999999999999
+        ],
+        "target": [
+          0,
+          0.97,
+          -0.25
+        ]
+      },
+      "sourceIds": [
+        "ri-ecg"
+      ],
+      "demonstration": {
+        "mode": "clinical-reassessment"
+      }
+    },
+    {
+      "id": "repeat-recording",
+      "start": 86,
+      "end": 91,
+      "title": "Repeat with consistent placement",
+      "detail": "Acquire the repeat recording with the same electrode sites and patient position for comparison.",
+      "focus": [
+        -0.75,
+        0.98,
+        -1.01
+      ],
+      "camera": {
+        "eye": [
+          -0.19999999999999996,
+          1.54,
+          -0.65
+        ],
+        "target": [
+          -0.75,
+          0.98,
+          -1.01
+        ]
+      },
+      "sourceIds": [
+        "ri-ecg",
+        "philips"
+      ],
+      "demonstration": {
+        "recordStatus": "repeat"
+      }
+    },
+    {
+      "id": "handover",
+      "start": 91,
+      "end": 98,
+      "title": "Transfer findings and ongoing care",
+      "detail": "Report the findings, contact problem, correction and repeat record; continue assessment and monitoring. No real transmission or diagnostic interpretation is performed.",
+      "focus": [
+        0,
+        0.96,
+        -0.1
+      ],
+      "camera": {
+        "eye": [
+          0.55,
+          1.52,
+          0.26
+        ],
+        "target": [
+          0,
+          0.96,
+          -0.1
+        ]
+      },
+      "sourceIds": [
+        "ri-ecg"
+      ],
+      "demonstration": {
+        "mode": "handover"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "philips",
+      "title": "Philips ECG lead placement poster",
+      "url": "https://www.philips.com/c-dam/b2bhc/master/Products/Category/supplies/ecg/ecg-lead-placements-poster.pdf"
+    },
+    {
+      "id": "ri-ecg",
+      "title": "Rhode Island EMS protocols 2026.02, section7.18 Multi-lead ECG acquisition",
+      "url": "https://health.ri.gov/sites/g/files/xkgbur1006/files/2026-02/StatewideEmergencyMedicalServices.pdf"
+    }
+  ],
+  "limits": [
+    "Clinical decision and record contents are case annotations, not a physiological ECG voltage generator.",
+    "Dry gauze motion is representative; patient-specific clipping, abrasion and other preparation are not mechanically assessed.",
+    "A demonstration replay is not learner performance, a treatment endpoint or instructor/clinical validation."
+  ],
+  "inputSourceSha256": "c7f4faa059ca320fa2640c99547f15d3b91ef744dbe4b14e131a9d13c4f86aa5",
+  "inputSource": "blender_demo/training_v1/source/Ambulance_Training_v1.blend"
+}
