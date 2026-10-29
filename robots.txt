@@ -1,0 +1,13 @@
+# /3DGS-Health-Scenes/ is public but kept away from AI crawlers and AI search.
+# Search engines stay allowed so they can read those pages' noindex meta,
+# which is what keeps them out of Google and Bing results.
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: Google-Extended
+User-agent: CCBot
+User-agent: PerplexityBot
+Disallow: /3DGS-Health-Scenes/
