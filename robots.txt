@@ -1,13 +1,42 @@
-# /3DGS-Health-Scenes/ is public but kept away from AI crawlers and AI search.
-# Search engines stay allowed so they can read those pages' noindex meta,
-# which is what keeps them out of Google and Bing results.
+# /3DGS-Health-Scenes/ is public by link only: no search listings, no AI crawling.
+# The rest of this site is open to everyone.
+
+# Any crawler not named below is refused that path by default.
+User-agent: *
+Disallow: /3DGS-Health-Scenes/
+
+# AI crawlers and image crawlers, named in case one only honors its own group.
 User-agent: GPTBot
 User-agent: OAI-SearchBot
 User-agent: ChatGPT-User
 User-agent: ClaudeBot
 User-agent: Claude-SearchBot
 User-agent: Claude-User
+User-agent: anthropic-ai
 User-agent: Google-Extended
+User-agent: GoogleOther
+User-agent: Google-CloudVertexBot
+User-agent: Applebot-Extended
 User-agent: CCBot
 User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Bytespider
+User-agent: Amazonbot
+User-agent: meta-externalagent
+User-agent: meta-externalfetcher
+User-agent: cohere-ai
+User-agent: DuckAssistBot
+User-agent: MistralAI-User
+User-agent: Diffbot
+User-agent: Googlebot-Image
+User-agent: msnbot-media
 Disallow: /3DGS-Health-Scenes/
+
+# Google and Bing may fetch the pages, because reading their noindex tag is what
+# keeps those pages out of search results. A block here would hide that tag.
+# Files that can't carry the tag stay off limits.
+User-agent: Googlebot
+User-agent: Bingbot
+Disallow: /3DGS-Health-Scenes/tools/
+Disallow: /3DGS-Health-Scenes/*.md$
+Disallow: /3DGS-Health-Scenes/viewers/sfm-review/app/SOURCE.html
